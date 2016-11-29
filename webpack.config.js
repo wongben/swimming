@@ -2,7 +2,12 @@ const webpack = require('atool-build/lib/webpack');
 
 module.exports = function(webpackConfig, env) {
   webpackConfig.babel.plugins.push('transform-runtime');
-
+  // Support AntDesign Mobile CSS
+  webpackConfig.babel.plugins.push(['import', {
+    style: true,
+    libraryDirectory: 'lib',
+    libraryName: 'antd-mobile',
+  }]);
   // Support hmr
   if (env === 'development') {
     webpackConfig.devtool = '#eval';
@@ -36,6 +41,12 @@ module.exports = function(webpackConfig, env) {
       loader.test = /\.css$/;
     }
   });
+
+  // const resolve = {
+  //   modulesDirectories: ['node_modules', require('path').join(__dirname, '../node_modules')],
+  //     extensions: ['', '.web.js', '.js', '.json'],
+  // }
+  // webpackConfig.resolve = resolve;
 
   return webpackConfig;
 };

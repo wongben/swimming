@@ -6,7 +6,7 @@ import Pools from './routes/Pools';
 export default ({ history }) => {
   return (
     <Router history={history}>
-      <Route path="/" component={IndexPage} />
+      <Route path="/" component={Pools} />
       <Route path="/pools" component={Pools} />
     </Router>
   );

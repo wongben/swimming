@@ -1,25 +1,30 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'dva';
 import PoolList from '../components/Pools/PoolList';
-import PoolSearch from '../components/Pools/PoolSearch';
-import styles from './NotFound.less';
+import styles from './Pools.less';
 
-const Users = ({ location, dispatch, pools }) => {
-  const poolSearchProps = {};
-  const poolListProps = {};
+const Pools = ({ location, dispatch, pools }) => {
+  const { dataSource, isLoading, pageNo, pageSize, total, currentItem } = pools;
+  const onEndReached = (event) => {
+    if (!isLoading) {
+      dispatch({
+        type: 'pools/query',
+        payload: { pageNo: pageNo + 1, pageSize }
+      });
+    }
+  };
+  const poolListProps = { dataSource, onEndReached, isLoading };
   return (
-    <div className={styles.pool}>
-      <PoolSearch {...poolSearchProps} />
-      <div className={styles.pool}>
+    <div className={styles.normal}>
       <PoolList {...poolListProps} />
-      </div>
     </div>
   );
 };
 
-Users.propTypes = {
+
+Pools.propTypes = {
 };
 
-const mapStateToProps = ({ users }) => ({ users });
+const mapStateToProps = ({ pools }) => ({ pools });
 
-export default connect(mapStateToProps)(Users);
+export default connect(mapStateToProps)(Pools);

@@ -4,13 +4,17 @@ const qs = require('qs');
 const mockjs = require('mockjs');
 
 // 数据持久
-let tableListData = {};
-if (!global.tableListData) {
+let poolListData = {};
+if (!global.poolListData) {
   const data = mockjs.mock({
     'data|100': [{
       'id|+1': 1,
       name: '@cname',
-      'age|11-99': 1,
+      img:'http://img.xskhome.com/pic/2016/news/20160524/191010_3721317444.png',
+      'price|11-99': 1,
+      'distance|11-99': 1,
+      'rating|1-5':1,
+      'status|1-2':1,
       address: '@region'
     }],
     page: {
@@ -18,23 +22,23 @@ if (!global.tableListData) {
       current: 1
     }
   });
-  tableListData = data;
-  global.tableListData = tableListData;
+  poolListData = data;
+  global.poolListData = poolListData;
 } else {
-  tableListData = global.tableListData;
+  poolListData = global.poolListData;
 }
 
 module.exports = {
 
-  'GET /api/users' (req, res) {
+  'GET /api/pools' (req, res) {
     const page = qs.parse(req.query);
-    const pageSize = page.pageSize || 10;
-    const currentPage = page.page || 1;
+    const pageSize = page.pageSize || 20;
+    const currentPage = page.pageNo || 1;
 
     let data;
     let newPage;
 
-    let newData = tableListData.data.concat();
+    let newData = poolListData.data.concat();
 
     if (page.field) {
       const d = newData.filter(function (item) {
@@ -48,14 +52,13 @@ module.exports = {
         total: d.length
       };
     } else {
-      data = tableListData.data.slice((currentPage - 1) * pageSize, currentPage * pageSize);
-      tableListData.page.current = currentPage * 1;
+      data = poolListData.data.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+      poolListData.page.current = currentPage * 1;
       newPage = {
-        current: tableListData.page.current,
-        total: tableListData.page.total
+        current: poolListData.page.current,
+        total: poolListData.page.total
       };
     }
-
 
     setTimeout(function () {
       res.json({
@@ -63,68 +66,7 @@ module.exports = {
         data,
         page: newPage
       });
-    },1);
-  },
-
-  'POST /api/users' (req, res) {
-    setTimeout(function () {
-      const newData = qs.parse(req.body);
-
-      newData.id = tableListData.data.length + 1;
-      tableListData.data.unshift(newData);
-
-      tableListData.page.total = tableListData.data.length;
-      tableListData.page.current = 1;
-
-      global.tableListData = tableListData;
-      res.json({
-        success: true,
-        data: tableListData.data,
-        page: tableListData.page
-      });
-    }, 500);
-  },
-
-  'DELETE /api/users' (req, res) {
-    setTimeout(function () {
-      const deleteItem = qs.parse(req.body);
-
-      tableListData.data = tableListData.data.filter(function (item) {
-        if (item.id == deleteItem.id) {
-          return false;
-        }
-        return true;
-      });
-
-      tableListData.page.total = tableListData.data.length;
-
-      global.tableListData = tableListData;
-      res.json({
-        success: true,
-        data: tableListData.data,
-        page: tableListData.page
-      });
-    }, 500);
-  },
-
-  'PUT /api/users' (req, res) {
-    setTimeout(function () {
-      const editItem = qs.parse(req.body);
-
-      tableListData.data = tableListData.data.map(function (item) {
-        if (item.id == editItem.id) {
-          return editItem;
-        }
-        return item;
-      });
-
-      global.tableListData = tableListData;
-      res.json({
-        success: true,
-        data: tableListData.data,
-        page: tableListData.page
-      });
-    }, 500);
+    },500);
   }
 
 };

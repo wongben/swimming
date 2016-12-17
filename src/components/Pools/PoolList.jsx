@@ -9,24 +9,23 @@ const poolListView = ({ dataSource, isLoading, onEndReached }) => {
   const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
   const renderRow = (rowData, sectionId, rowId) => (<PoolItem rowData={rowData} sectionId={sectionId} rowId={rowId} />);
   //列表Footer
-
-  console.info('poolListView isLoading', isLoading);
   const renderFooter = () => (<div style={{ padding: 5, textAlign: 'center' }}>
-    {isLoading ? '加载中...' : '加载完毕'}</div>);
+    {isLoading ? '加载中...' : '我是有底线的'}</div>);
 
   return (
     <div className={styles.listView}>
       <ListView
         dataSource={ds.cloneWithRows(dataSource)}
-        className="am-list"
         useBodyScroll
+        renderSeparator={(sectionID, rowID) => (
+          <div key={`${sectionID}-${rowID}`} style={{ height: '1px', backgroundColor: '#f5f5f9' }} />
+        )}
         renderRow={renderRow}
         renderFooter={renderFooter}
         scrollRenderAheadDistance={900}
         onEndReached={onEndReached}
-        onEndReachedThreshold={10}
-        initialListSize={12}
-        pageSize={20}
+        onEndReachedThreshold={100}
+        initialListSize={dataSource.length - 4}
         scrollEventThrottle={30}
       />
     </div>

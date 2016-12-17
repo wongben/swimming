@@ -1,4 +1,5 @@
 src/**/*-test.js
-mock
+mock/
+dist/
 proxy.config.js
 webpack.config.js

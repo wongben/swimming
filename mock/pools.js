@@ -7,7 +7,7 @@ const mockjs = require('mockjs');
 let poolListData = {};
 if (!global.poolListData) {
   const data = mockjs.mock({
-    'data|100': [{
+    'data|50': [{
       'id|+1': 1,
       name: '@cname',
       img:'http://img.xskhome.com/pic/2016/news/20160524/191010_3721317444.png',
@@ -18,7 +18,7 @@ if (!global.poolListData) {
       address: '@region'
     }],
     page: {
-      total: 100,
+      total: 50,
       current: 1
     }
   });
@@ -32,14 +32,12 @@ module.exports = {
 
   'GET /api/pools' (req, res) {
     const page = qs.parse(req.query);
-    const pageSize = page.pageSize || 20;
+    const pageSize = page.pageSize || 10;
     const currentPage = page.pageNo || 1;
 
     let data;
     let newPage;
-
     let newData = poolListData.data.concat();
-
     if (page.field) {
       const d = newData.filter(function (item) {
         return item[page.field].indexOf(page.keyword) > -1;

@@ -1,1 +1,1 @@
- The subsystem Wechat for Project of Shanghai Administration of Sports Management System.
+ The subsystem Wechat-frontend for Shanghai Administration of Sports Management System.

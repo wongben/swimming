@@ -4,16 +4,16 @@ import PoolList from '../components/Pools/PoolList';
 import styles from './Pools.less';
 
 const Pools = ({ location, dispatch, pools }) => {
-  const { dataSource, isLoading, pageNo, pageSize, hadMore, total, currentItem } = pools;
+  const { dataSource, loading, pageNo, pageSize, hadMore, total, currentItem } = pools;
   const onEndReached = (event) => {
-    if (!isLoading && hadMore) {
+    if (!loading && hadMore) {
       dispatch({
         type: 'pools/query',
         payload: { pageNo: pageNo + 1, pageSize }
       });
     }
   };
-  const poolListProps = { dataSource, onEndReached, isLoading };
+  const poolListProps = { dataSource, onEndReached, loading };
   return (
     <div className={styles.normal}>
       <PoolList {...poolListProps} />

@@ -3,6 +3,7 @@ import request from '../utils/request';
 
 export async function query(params) {
   console.info('query', qs.stringify(params));
+  //return request(`${baseUrl}/api/pools?${qs.stringify(params)}`);
   return request(`/api/pools?${qs.stringify(params)}`);
 }
 

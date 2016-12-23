@@ -1,8 +1,8 @@
 import dva from 'dva';
 import pools from './models/pools';
+import router from './router';
 import './index.html';
 import './index.css';
-
 
 // 1. Initialize
 const app = dva();
@@ -14,7 +14,7 @@ const app = dva();
 app.model(pools);
 
 // 4. Router
-app.router(require('./router'));
+app.router(router);
 
 // 5. Start
 app.start('#root');

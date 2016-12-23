@@ -5,12 +5,12 @@ import PoolItem from './PoolItem';
 
 import styles from './PoolList.less';
 
-const poolListView = ({ dataSource, isLoading, onEndReached }) => {
+const poolListView = ({ dataSource, loading, onEndReached }) => {
   const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
   const renderRow = (rowData, sectionId, rowId) => (<PoolItem rowData={rowData} sectionId={sectionId} rowId={rowId} />);
   //列表Footer
   const renderFooter = () => (<div style={{ padding: 5, textAlign: 'center' }}>
-    {isLoading ? '加载中...' : '我是有底线的'}</div>);
+    {loading ? '加载中...' : '我是有底线的'}</div>);
 
   return (
     <div className={styles.listView}>
@@ -31,5 +31,10 @@ const poolListView = ({ dataSource, isLoading, onEndReached }) => {
     </div>
   );
 };
+
+poolListView.propTypes = {
+  loading: PropTypes.bool.isRequired,
+};
+
 
 export default poolListView;

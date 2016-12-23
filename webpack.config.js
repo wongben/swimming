@@ -1,4 +1,5 @@
 const webpack = require('atool-build/lib/webpack');
+const pxtorem = require('postcss-pxtorem');
 
 module.exports = function(webpackConfig, env) {
   webpackConfig.babel.plugins.push('transform-runtime');
@@ -8,6 +9,11 @@ module.exports = function(webpackConfig, env) {
     libraryDirectory: 'lib',
     libraryName: 'antd-mobile',
   }]);
+  webpackConfig.postcss.push(pxtorem({
+    rootValue: 100,
+    propWhiteList: [],
+  }));
+
   // Support hmr
   if (env === 'development') {
     webpackConfig.devtool = '#eval';
@@ -21,6 +27,21 @@ module.exports = function(webpackConfig, env) {
     return !(plugin instanceof webpack.optimize.CommonsChunkPlugin);
   });
 
+  //配置API环境变量
+  // var apiHost;
+  // switch (env){
+  //   case 'develop':
+  //     apiHost = 'http://develop:8989/api';
+  //     break;
+  //   case 'production':
+  //     apiHost = 'http://production:8989/api';
+  //     break;
+  //   default:
+  //     apiHost = 'http://default:8989/api';
+  // }
+  // webpackConfig.plugins.push(new webpack.DefinePlugin({
+  //   __API__: apiHost
+  // }));
   // Support CSS Modules
   // Parse all less files as css module.
   webpackConfig.module.loaders.forEach(function(loader, index) {

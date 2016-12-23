@@ -6,7 +6,7 @@ export default {
   namespace: 'pools',
   state: {
     dataSource: [],
-    isLoading: false,
+    loading: false,
     hadMore: true,
     pageNo: 1,
     pageSize: 20,
@@ -54,16 +54,16 @@ export default {
   },
   reducers: {
     showLoading(state) {
-      return { ...state, isLoading: true };
+      return { ...state, loading: true };
     },
     hideLoading(state) {
-      return { ...state, isLoading: false, hadMore: false };
+      return { ...state, loading: false, hadMore: false };
     },
     showMessage(state) {},
     querySuccess(state, action) {
       const dataSource = state.dataSource.concat(action.payload.data);
       const pageNo = action.payload.pageNo;
-      return { ...state, dataSource, pageNo, isLoading: false };
+      return { ...state, dataSource, pageNo, loading: false };
     },
     updateQueryKey(state, action) {
       return { ...state, ...action.payload };

@@ -1,6 +1,7 @@
 /* eslint import/extensions: 0 */
-import { WhiteSpace, WingBlank, Button, List, Icon, Card, Flex, Tag, TabBar } from 'antd-mobile';
+import { WhiteSpace, WingBlank, Button, List, Icon, Card, Flex, Tag, TabBar, NavBar } from 'antd-mobile';
 import React, { PropTypes } from 'react';
+import { hashHistory } from 'dva/router';
 import StarIcons from '../components/Common/StarIcons';
 import styles from './PoolPage.less';
 
@@ -13,11 +14,18 @@ const bgStyle = {
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   width: '100%',
-  height: '600px'
+  height: '300px'
 };
 
-const PoolPage = ({ pool, loading }) => (
+const PoolPage = ({ pool, loading, history }) => (
   <div className={styles.page_container}>
+    <NavBar
+      leftContent="返回"
+      style={{ backgroundColor: '#108ee9' }}
+      mode="dark"
+      onLeftClick={() => { hashHistory.goBack(); }} >
+      游泳池详情
+    </NavBar>
     <List className={styles.test}>
       <div style={bgStyle} />
       <div className={styles.address_line}>
@@ -64,12 +72,18 @@ const PoolPage = ({ pool, loading }) => (
     </List>
 
     <div className={styles.button_container}>
-      {/*<WhiteSpace size="xs" />*/}
-      {/*<WingBlank size="md">*/}
+      <WhiteSpace size="xs" />
+      <WingBlank size="md">
         <Button className="btn" type="primary" size="large">选择票券</Button>
-      {/*</WingBlank>*/}
+      </WingBlank>
     </div>
   </div>
 );
+
+
+PoolPage.propTypes = {
+
+};
+
 
 export default PoolPage;

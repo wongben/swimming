@@ -31,7 +31,6 @@ export default {
     * query({ payload }, { call, put }) {
       yield put({ type: 'showLoading' });
       const { data } = yield call(query, parse(payload));
-      //console.info('action.payload.data.length', data.data.length);
       if (data && data.data.length > 0) {
         yield put({
           type: 'updateQueryKey',

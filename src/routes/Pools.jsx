@@ -1,3 +1,5 @@
+/* eslint import/extensions: 0 */
+import { TabBar, SearchBar } from 'antd-mobile';
 import React, { PropTypes } from 'react';
 import { connect } from 'dva';
 import PoolList from '../components/Pools/PoolList';
@@ -16,7 +18,43 @@ const Pools = ({ location, dispatch, pools }) => {
   const poolListProps = { dataSource, onEndReached, loading };
   return (
     <div className={styles.normal}>
+      <SearchBar placeholder="搜索" />
       <PoolList {...poolListProps} />
+      <TabBar
+        unselectedTintColor="#949494"
+        tintColor="#33A3F4"
+        barTintColor="white"
+      >
+        <TabBar.Item
+          icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/UNQhIatjpNZHjVf.png' }}
+          selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/HLkBvJOKnmOfBPO.png' }}
+          title="首页"
+          key="index"
+          badge={1}
+          data-seed="logId"
+        />
+        <TabBar.Item
+          icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/UNQhIatjpNZHjVf.png' }}
+          selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/HLkBvJOKnmOfBPO.png' }}
+          title="优惠"
+          key="discount"
+          data-seed="logId"
+        />
+        <TabBar.Item
+          icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/UNQhIatjpNZHjVf.png' }}
+          selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/HLkBvJOKnmOfBPO.png' }}
+          title="咨讯"
+          key="info"
+          data-seed="logId"
+        />
+        <TabBar.Item
+          icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/UNQhIatjpNZHjVf.png' }}
+          selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/HLkBvJOKnmOfBPO.png' }}
+          title="我的"
+          key="my"
+          data-seed="logId"
+        />
+      </TabBar>
     </div>
   );
 };

@@ -26,22 +26,34 @@ module.exports = function(webpackConfig, env) {
   webpackConfig.plugins = webpackConfig.plugins.filter(function(plugin) {
     return !(plugin instanceof webpack.optimize.CommonsChunkPlugin);
   });
-
-  //配置API环境变量
-  // var apiHost;
-  // switch (env){
-  //   case 'develop':
-  //     apiHost = 'http://develop:8989/api';
-  //     break;
-  //   case 'production':
-  //     apiHost = 'http://production:8989/api';
-  //     break;
-  //   default:
-  //     apiHost = 'http://default:8989/api';
-  // }
-  // webpackConfig.plugins.push(new webpack.DefinePlugin({
-  //   __API__: apiHost
-  // }));
+  //配置各种全局环境变量
+  var define = {
+    "default": {
+      "HOST": "",
+      "DEBUG": true
+    },
+    "development": {
+      "HOST": "http://development/v3",
+      "DEBUG": true
+    },
+    "production": {
+      "HOST": "http://production/v3",
+      "DEBUG": false
+    }
+  };
+  var definePluginOptionKey = define[process.env.NODE_ENV] ? process.env.NODE_ENV : define['default'] ? 'default' : '';
+  if(definePluginOptionKey){
+    var defineContent = define[definePluginOptionKey];
+    if (typeof defineContent === 'object') {
+      for (var i in defineContent) {
+        (typeof(defineContent[i]) === 'string' || typeof(defineContent[i] === 'object')) && (defineContent[i] = JSON.stringify(defineContent[i]));
+      }
+    }
+    webpackConfig.plugins.push(
+      new webpack.DefinePlugin(defineContent)
+    )
+  }
+  console.info('NODE_ENV is', definePluginOptionKey);
   // Support CSS Modules
   // Parse all less files as css module.
   webpackConfig.module.loaders.forEach(function(loader, index) {

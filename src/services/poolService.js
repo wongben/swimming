@@ -1,10 +1,10 @@
 import qs from 'qs';
 import request from '../utils/request';
+/* eslint no-undef: 0 */
+const baseURL = HOST;
 
 export async function query(params) {
-  console.info('query', qs.stringify(params));
-  //return request(`${baseUrl}/api/pools?${qs.stringify(params)}`);
-  return request(`/api/pools?${qs.stringify(params)}`);
+  return request(`${baseURL}/api/pools?${qs.stringify(params)}`);
 }
 
 export async function create(params) {

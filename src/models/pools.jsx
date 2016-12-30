@@ -1,5 +1,5 @@
 import { parse } from 'qs';
-import { query } from '../services/poolService';
+import { query, queryList } from '../services/poolService';
 
 
 export default {
@@ -30,7 +30,7 @@ export default {
   effects: {
     * query({ payload }, { call, put }) {
       yield put({ type: 'showLoading' });
-      const { data } = yield call(query, parse(payload));
+      const { data } = yield call(queryList, parse(payload));
       if (data && data.data.length > 0) {
         yield put({
           type: 'updateQueryKey',

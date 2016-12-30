@@ -33,7 +33,7 @@ module.exports = function(webpackConfig, env) {
       "DEBUG": true
     },
     "development": {
-      "HOST": "http://development/v3",
+      "HOST": "http://192.168.2.178:8080/v3",
       "DEBUG": true
     },
     "production": {

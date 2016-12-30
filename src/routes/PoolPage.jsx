@@ -23,7 +23,8 @@ const PoolPage = ({ pool, loading, history }) => (
       leftContent="返回"
       style={{ backgroundColor: '#108ee9' }}
       mode="dark"
-      onLeftClick={() => { hashHistory.goBack(); }} >
+      onLeftClick={() => { hashHistory.goBack(); }}
+    >
       游泳池详情
     </NavBar>
     <List className={styles.test}>

@@ -31,7 +31,8 @@ export default {
     * query({ payload }, { call, put }) {
       yield put({ type: 'showLoading' });
       const { data } = yield call(queryList, parse(payload));
-      if (data && data.data.length > 0) {
+
+      if (data.data.dataList && data.data.dataList.length > 0) {
         yield put({
           type: 'updateQueryKey',
           payload: { pageNo: 1, ...payload }
@@ -39,9 +40,9 @@ export default {
         yield put({
           type: 'querySuccess',
           payload: {
-            data: data.data,
-            total: data.page.total,
-            pageNo: data.page.current,
+            data: data.data.dataList,
+            totalCount: data.data.totalCount,
+            pageNo: data.data.pageNo,
           },
         });
       } else {

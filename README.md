@@ -1,6 +1,7 @@
 # Dvajs(Redux + Saga) + AntDesginMobile.
 ## 1. Install Environment
 1.1 ensure Nodejs version > 6.9 && npm version 3.10.8
+
 1.2 replace npm source,use the commands:
   ```
   npm config set registry https://registry.npm.taobao.org
@@ -10,7 +11,7 @@
 
 ```
 git clone http://git.1yd.me/frontend/swimming.git
-swimming
+cd swimming
 npm install
 npm start 
 ```
@@ -29,4 +30,5 @@ npm start
 
 ## 4. How to write your code?
 4.1 learn the articles https://github.com/sorrycc/blog/issues/18
+
 4.2 etc..

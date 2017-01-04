@@ -43,7 +43,7 @@ module.exports = {
           dataList: data,
           pageNo: currentPage * 1,
           pageSize: pageSize * 1,
-            pageCount: Math.ceil(poolListData.data.dataList.length / pageSize ),
+          pageCount: Math.ceil(poolListData.data.dataList.length / pageSize ),
           totalCount: poolListData.data.totalCount
         }
       });

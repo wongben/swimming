@@ -1,19 +1,35 @@
 import { parse } from 'qs';
+import pathToRegexp from 'path-to-regexp';
 import { query, queryList } from '../services/poolService';
-
+import poolSelector from '../models/selectors';
 
 export default {
   namespace: 'pools',
   state: {
     dataSource: [],
+    currentItem: {
+      address: '',
+      spName: '',
+      idle: '',
+      latitude: '',
+      fixedNumber: 0,
+      spAvatar: '',
+      arrivedNumber: 0,
+      score: '',
+      phone: '',
+      temperature: '',
+      waterQuality: '',
+      serviceTypes: [],
+      id: '',
+      longitude: ''
+    },
     loading: false,
     hadMore: true,
     pageNo: 1,
     pageSize: 20,
     total: 0,
     totalPage: 0,
-    totalCount: 0,
-    currentItem: {},
+    totalCount: 0
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -26,12 +42,26 @@ export default {
         }
       });
     },
+
+    poolSubscriber({ dispatch, history }) {
+      return history.listen(({ pathname }) => {
+        const match = pathToRegexp('/pools/:poolId').exec(pathname);
+        if (match) {
+          console.info('poolSubscriber', match[1]);
+          const poolId = match[1];
+          dispatch({
+            type: 'showPoolPage',
+            payload: poolId,
+          });
+        }
+      });
+    },
+
   },
   effects: {
     * query({ payload }, { call, put }) {
       yield put({ type: 'showLoading' });
       const { data } = yield call(queryList, parse(payload));
-
       if (data.data.dataList && data.data.dataList.length > 0) {
         yield put({
           type: 'updateQueryKey',
@@ -48,11 +78,10 @@ export default {
       } else {
         yield put({ type: 'hideLoading' });
       }
-    },
-
-    * login() {},
+    }
   },
   reducers: {
+
     showLoading(state) {
       return { ...state, loading: true };
     },
@@ -67,6 +96,10 @@ export default {
     },
     updateQueryKey(state, action) {
       return { ...state, ...action.payload };
+    },
+    showPoolPage(state, action) {
+      console.info('showPool reducers', poolSelector(state, action.payload));
+      return { ...state, currentItem: poolSelector(state, action.payload) };
     },
   }
 }

@@ -7,6 +7,7 @@
     "antd-mobile": "^0.9.11",
     "dva": "^1.2.1",
     "dva-loading": "^0.2.0",
+    "path-to-regexp": "^1.7.0",
     "qs": "^6.3.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.0"

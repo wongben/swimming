@@ -10,10 +10,10 @@ if (!global.poolListData) {
     'data': {
       'dataList|50': [{
         'id|+1': 1,
-        name: '@cname',
-        img: 'http://img.xskhome.com/pic/2016/news/20160524/191010_3721317444.png',
+        spName: '@cname',
+        spAvatar: 'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr',
         'price|11-99': 1,
-        'distance|11-99': 1,
+        'fixedNumber|11-99': 1,
         'rating|1-5': 1,
         'status|1-2': 1,
         address: '@region'

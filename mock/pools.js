@@ -31,7 +31,7 @@ if (!global.poolListData) {
 }
 
 module.exports = {
-  'GET /swim/pools/queryData' (req, res) {
+  'GET /swim/pools/public' (req, res) {
     const page = qs.parse(req.query);
     const pageSize = page.pageSize || 10;
     const currentPage = page.pageNo || 1;

@@ -4,15 +4,15 @@ import request from '../utils/request';
 const baseURL = HOST;
 
 export async function query(params) {
-  return request(`${baseURL}/swim/pools/queryData?${qs.stringify(params)}`);
+  return request(`${baseURL}/swim/pools/public?${qs.stringify(params)}`);
 }
 
 export async function fetchPoolList(params) {
-  return request(`${baseURL}/swim/pools/queryData?${qs.stringify(params)}`);
+  return request(`${baseURL}/swim/pools/public?${qs.stringify(params)}`);
 }
 
-export async function fetchPool(params) {
-  return request(`${baseURL}/swim/pools/queryData?${qs.stringify(params)}`);
+export async function fetchPool(id) {
+  return request(`${baseURL}/swim/pools/public/${id}`);
 }
 
 export async function create(params) {

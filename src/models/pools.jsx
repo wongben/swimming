@@ -32,7 +32,7 @@ export default {
     totalCount: 0
   },
   subscriptions: {
-    setup({ dispatch, history }) {
+    homePage({ dispatch, history }) {
       history.listen((location) => {
         if (location.pathname === '/pools') {
           dispatch({
@@ -42,15 +42,14 @@ export default {
         }
       });
     },
-
-    poolSubscriber({ dispatch, history }) {
+    poolPage({ dispatch, history }) {
       return history.listen(({ pathname }) => {
         const match = pathToRegexp('/pools/:poolId').exec(pathname);
         if (match) {
           console.info('poolSubscriber', match[1]);
           const poolId = match[1];
           dispatch({
-            type: 'showPoolPage',
+            type: 'fetchPool',
             payload: poolId,
           });
         }
@@ -111,10 +110,6 @@ export default {
     },
     showPool(state, action) {
       return { ...state, ...action.payload };
-    },
-    showPoolPage(state, action) {
-      console.info('showPool reducers', poolSelector(state, action.payload));
-      return { ...state, currentItem: poolSelector(state, action.payload) };
-    },
+    }
   }
 }

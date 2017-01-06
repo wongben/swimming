@@ -9,7 +9,7 @@ const StarIcons = ({ currentStarNumber, maxStarNumber }) => {
     if (index < currentStarNumber) {
       icons.push(<Icon className={styles.icon} type="star" key={index} />);
     } else {
-      icons.push(<Icon type="star-o" key={index} />);
+      icons.push(<Icon className={styles.icon_empty} type="star-o" key={index} />);
     }
   }
   return (<span>{icons}</span>);

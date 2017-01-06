@@ -1,14 +1,12 @@
 /* eslint import/extensions: 0 */
-import { WhiteSpace, WingBlank, Button, List, Icon, Card, Flex, Tag, TabBar, NavBar } from 'antd-mobile';
+import { WhiteSpace, WingBlank, Button, List, Icon, Flex, Tag, NavBar } from 'antd-mobile';
 import { connect } from 'dva';
 import React, { PropTypes } from 'react';
 import { hashHistory } from 'dva/router';
-import poolSelector from '../models/selectors';
 import StarIcons from '../components/Common/StarIcons';
 import styles from './PoolPage.less';
 
 const Item = List.Item;
-const Brief = Item.Brief;
 
 const PoolPage = ({ pools }) => {
   const { currentItem } = pools;

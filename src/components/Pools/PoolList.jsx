@@ -9,7 +9,6 @@ const poolListView = ({ dataSource, loading, onEndReached }) => {
   //列表Footer
   const renderFooter = () => (<div style={{ padding: 5, textAlign: 'center' }}>
     {loading ? '加载中...' : '我是有底线的'}</div>);
-
   return (
     <ListView
       dataSource={ds.cloneWithRows(dataSource)}

@@ -42,11 +42,11 @@ export default {
         }
       });
     },
+
     poolPage({ dispatch, history }) {
       return history.listen(({ pathname }) => {
         const match = pathToRegexp('/pools/:poolId').exec(pathname);
         if (match) {
-          console.info('poolSubscriber', match[1]);
           const poolId = match[1];
           dispatch({
             type: 'fetchPool',

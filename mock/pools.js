@@ -11,7 +11,7 @@ if (!global.poolListData) {
       'dataList|50': [{
         'id|+1': 1,
         spName: '@cname',
-        spAvatar: 'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr',
+          spAvatar: 'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr',
         'price|11-99': 1,
         'fixedNumber|11-99': 1,
         'rating|1-5': 1,

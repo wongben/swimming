@@ -40,6 +40,12 @@ const PoolPage = ({ pools }) => {
           <div className={styles.number_item}>
             <div className={styles.current_number}>  定员 : 60人</div>
             <div className={styles.entered_number}>已入场 : 50人</div>
+            <div><strong>{currentItem.spName}</strong></div>
+            <div>电话 : {currentItem.phone}</div>
+          </div>
+          <div className={styles.number_item}>
+            <div className={styles.current_number}>  定员 : {currentItem.fixedNumber}人</div>
+            <div>已入场 : {currentItem.arrivedNumber}人</div>
           </div>
         </div>
         <Item>
@@ -53,28 +59,26 @@ const PoolPage = ({ pools }) => {
             服务 :
           </span>
           <Flex.Item flex="5">
+            <img className={styles.icon_line} src="https://oiu4ewuqq.qnssl.com/wifi.png" alt="" />
             <img className={styles.icon_line} src="https://oiu4ewuqq.qnssl.com/shampoo.png" alt="" />
-            <img className={styles.icon_line} src="https://oiu4ewuqq.qnssl.com/shampoo.png" alt="" />
-            <img className={styles.icon_line} src="https://oiu4ewuqq.qnssl.com/shampoo.png" alt="" />
-            <img className={styles.icon_line} src="https://oiu4ewuqq.qnssl.com/shampoo.png" alt="" />
+            <img className={styles.icon_line} src="https://oiu4ewuqq.qnssl.com/sauna.png" alt="" />
+            <img className={styles.icon_line} src="https://oiu4ewuqq.qnssl.com/baby_pool.png" alt="" />
           </Flex.Item>
         </Flex>
         <div className={styles.tag_container}>
           <Tag selected>相册</Tag>
-          <Tag>相册</Tag>
-          <Tag>相册</Tag>
-          <Tag>相册</Tag>
+          <Tag selected>救生员</Tag>
+          <Tag selected>活动邀请</Tag>
+          <Tag selected>明星教练</Tag>
         </div>
         <div style={{ height: '0.3rem',background: '#f5f5f9',borderBottom: '1px solid #ddd' }} />
         <Item>
           <Flex style={{ color:'#666'}}>
-            <Flex.Item>水质 : <span className={styles.water_quality}>优</span></Flex.Item>
-            <Flex.Item>水温 : <span className={styles.water_temp}>5C</span></Flex.Item>
+            <Flex.Item>水质 : {currentItem.waterQuality}优</Flex.Item>
+            <Flex.Item>水温 : {currentItem.temperature} &#8451;</Flex.Item>
           </Flex>
         </Item>
-
       </List>
-
       <div className={styles.button_container}>
         <WhiteSpace size="xs" />
         <WingBlank size="md">

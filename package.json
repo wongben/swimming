@@ -34,7 +34,7 @@
     "start": "dora --plugins \"proxy?watchDirs=./mock,webpack,webpack-hmr\"",
     "dev": "cross-env NODE_ENV=development dora --plugins \"proxy?watchDirs=./mock,webpack,webpack-hmr\"",
     "release": "cross-env NODE_ENV=release dora --plugins \"proxy?watchDirs=./mock,webpack,webpack-hmr\"",
-    "build": "atool-build",
+    "build": "cross-env NODE_ENV=production atool-build",
     "test": "atool-test-mocha ./src/**/*-test.js"
   }
 }

@@ -10,7 +10,8 @@ const PoolItem = ({ rowData, sectionId, rowId }) => (
       </div>
       <div className={styles.content}>
         <div className={styles.firstRow}>{rowData.spName}</div>
-        <div className={styles.secondRow}>500米</div>
+        <div style={{ height: '0.1rem' }} />
+        <div className={styles.secondRow}>{rowData.address}</div>
       </div>
     </Link>
   </div>

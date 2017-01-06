@@ -48,6 +48,24 @@ module.exports = {
         }
       });
     },500);
+  },
+  'GET /swim/pools/' (req, res) {
+    const page = qs.parse(req.query);
+    const pageSize = page.pageSize || 10;
+    const currentPage = page.pageNo || 1;
+    let data = poolListData.data.dataList.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+    setTimeout(function () {
+      res.json({
+        success: true,
+        data: {
+          dataList: data,
+          pageNo: currentPage * 1,
+          pageSize: pageSize * 1,
+          pageCount: Math.ceil(poolListData.data.dataList.length / pageSize ),
+          totalCount: poolListData.data.totalCount
+        }
+      });
+    },500);
   }
 
 };

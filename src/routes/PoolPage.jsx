@@ -14,10 +14,10 @@ const PoolPage = ({ pools }) => {
   const { currentItem } = pools;
   const bgStyle = {
     backgroundColor: '#aaa',
-    backgroundImage: `url(${currentItem.spAvatar})`,
+    backgroundImage: `url(http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr)`,
     backgroundSize: 'cover',
     width: '100%',
-    height: '5rem'
+    minHeight: '3rem'
   };
 
   return (
@@ -34,16 +34,16 @@ const PoolPage = ({ pools }) => {
         <div style={bgStyle} />
         <div className={styles.address_line}>
           <div className={styles.address_item}>
-            <div ><strong>{currentItem.spName}</strong></div>
-            <div>1388888888</div>
+            <div ><strong>1111</strong></div>
+            <div className={styles.address_phone}>电话：<span>1388888888</span></div>
           </div>
           <div className={styles.number_item}>
             <div className={styles.current_number}>  定员 : 60人</div>
-            <div>已入场 : 50人</div>
+            <div className={styles.entered_number}>已入场 : 50人</div>
           </div>
         </div>
         <Item>
-          <Flex direction="row" justify="between">
+          <Flex direction="row" justify="between" style={{ color:'#666'}}>
             <Flex.Item>评分 : <StarIcons currentStarNumber="4" maxStarNumber="5" /></Flex.Item>
             <Icon type="phone" />
           </Flex>
@@ -65,11 +65,11 @@ const PoolPage = ({ pools }) => {
           <Tag>相册</Tag>
           <Tag>相册</Tag>
         </div>
-        <div style={{ height: '0.3rem' }} />
+        <div style={{ height: '0.3rem',background: '#f5f5f9',borderBottom: '1px solid #ddd' }} />
         <Item>
-          <Flex>
-            <Flex.Item>水质 : </Flex.Item>
-            <Flex.Item>水温 : </Flex.Item>
+          <Flex style={{ color:'#666'}}>
+            <Flex.Item>水质 : <span className={styles.water_quality}>优</span></Flex.Item>
+            <Flex.Item>水温 : <span className={styles.water_temp}>5C</span></Flex.Item>
           </Flex>
         </Item>
 

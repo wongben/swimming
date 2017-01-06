@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+  color: #666;
 }
 
 .address_line {
@@ -10,18 +11,37 @@
   flex-direction: row;
   font-size: 34px;
   margin-top: 20px;
+  border-bottom: 1px solid #ddd;
   .address_item {
     padding-left: 30px;
     flex: 2;
     div {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      strong {
+        font-size: 44px;
+        font-weight: 400;
+      }
+      .address_phone {
+        line-height: 2;
+      }
     }
   }
   .number_item  {
     flex:1;
     .current_number {
-      border: 3px dashed;
+      border: 2px dotted #108ee9;
       border-radius: 10px;
+      margin-right: 20px;
+      padding: 10px 20px;
+      text-align: center;
+      color: #108ee9;
+      line-height: 1.5
+    }
+    .entered_number {
+      color: lightsalmon;
+      font-size: 95%;
+      line-height: 2;
     }
     .max_number {
 
@@ -45,6 +65,7 @@
 .tag_container{
   display: flex;
   padding-top: 0.18rem;
+  padding-bottom: 0.2rem;
   flex-direction: row;
   flex-wrap: wrap;
   border-top: 1px solid #ddd;
@@ -65,5 +86,16 @@
   flex: 1;
 }
 
+.water_quality {
+  display: inline-block;
+  padding: 10px 12px;
+  background: #108ee9;
+  color: #fff;
+  margin: 15px 0 15px 40px;
+}
+.water_temp {
+  margin-left: 40px;
+  font-size: 90%;
+}
 
 

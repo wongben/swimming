@@ -34,12 +34,12 @@ const PoolPage = ({ pools }) => {
         <div style={bgStyle} />
         <div className={styles.address_line}>
           <div className={styles.address_item}>
-            <div ><strong>{currentItem.spName}</strong></div>
-            <div>1388888888</div>
+            <div><strong>{currentItem.spName}</strong></div>
+            <div>电话 : {currentItem.phone}</div>
           </div>
           <div className={styles.number_item}>
-            <div className={styles.current_number}>  定员 : 60人</div>
-            <div>已入场 : 50人</div>
+            <div className={styles.current_number}>  定员 : {currentItem.fixedNumber}人</div>
+            <div>已入场 : {currentItem.arrivedNumber}人</div>
           </div>
         </div>
         <Item>
@@ -53,23 +53,23 @@ const PoolPage = ({ pools }) => {
             服务 :
           </span>
           <Flex.Item flex="5">
+            <img className={styles.icon_line} src="https://oiu4ewuqq.qnssl.com/wifi.png" alt="" />
             <img className={styles.icon_line} src="https://oiu4ewuqq.qnssl.com/shampoo.png" alt="" />
-            <img className={styles.icon_line} src="https://oiu4ewuqq.qnssl.com/shampoo.png" alt="" />
-            <img className={styles.icon_line} src="https://oiu4ewuqq.qnssl.com/shampoo.png" alt="" />
-            <img className={styles.icon_line} src="https://oiu4ewuqq.qnssl.com/shampoo.png" alt="" />
+            <img className={styles.icon_line} src="https://oiu4ewuqq.qnssl.com/sauna.png" alt="" />
+            <img className={styles.icon_line} src="https://oiu4ewuqq.qnssl.com/baby_pool.png" alt="" />
           </Flex.Item>
         </Flex>
         <div className={styles.tag_container}>
           <Tag selected>相册</Tag>
-          <Tag>相册</Tag>
-          <Tag>相册</Tag>
-          <Tag>相册</Tag>
+          <Tag selected>救生员</Tag>
+          <Tag selected>活动邀请</Tag>
+          <Tag selected>明星教练</Tag>
         </div>
         <div style={{ height: '0.3rem' }} />
         <Item>
           <Flex>
-            <Flex.Item>水质 : </Flex.Item>
-            <Flex.Item>水温 : </Flex.Item>
+            <Flex.Item>水质 : {currentItem.waterQuality}</Flex.Item>
+            <Flex.Item>水温 : {currentItem.temperature} &#8451;</Flex.Item>
           </Flex>
         </Item>
 

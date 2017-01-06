@@ -26,32 +26,31 @@ const Pools = ({ location, dispatch, pools }) => {
         barTintColor="white"
       >
         <TabBar.Item
-          icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/UNQhIatjpNZHjVf.png' }}
-          selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/HLkBvJOKnmOfBPO.png' }}
+          icon={{ uri: 'http://oiu42aq9j.bkt.clouddn.com/tabbar-home.png' }}
+          selectedIcon={{ uri: 'http://oiu42aq9j.bkt.clouddn.com/tabbar-home-selected.png' }}
           title="首页"
           key="index"
-          badge={1}
           data-seed="logId"
         />
         <TabBar.Item
-          icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/UNQhIatjpNZHjVf.png' }}
-          selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/HLkBvJOKnmOfBPO.png' }}
+          icon={{ uri: 'http://oiu42aq9j.bkt.clouddn.com/tabbar-discount.png' }}
+          selectedIcon={{ uri: 'http://oiu42aq9j.bkt.clouddn.com/tabbar-discount-selected.png' }}
           title="优惠"
           key="discount"
           data-seed="logId"
         />
         <TabBar.Item
-          icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/UNQhIatjpNZHjVf.png' }}
-          selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/HLkBvJOKnmOfBPO.png' }}
+          icon={{ uri: 'http://oiu42aq9j.bkt.clouddn.com/tabbar-info.png' }}
+          selectedIcon={{ uri: 'http://oiu42aq9j.bkt.clouddn.com/tabbar-info-selected.png' }}
           title="咨讯"
           key="info"
           data-seed="logId"
         />
         <TabBar.Item
-          icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/UNQhIatjpNZHjVf.png' }}
-          selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/HLkBvJOKnmOfBPO.png' }}
+          icon={{ uri: 'http://oiu42aq9j.bkt.clouddn.com/tabbar-mine.png' }}
+          selectedIcon={{ uri: 'http://oiu42aq9j.bkt.clouddn.com/tabbar-mine-selected.png' }}
           title="我的"
-          key="my"
+          key="mine"
           data-seed="logId"
         />
       </TabBar>

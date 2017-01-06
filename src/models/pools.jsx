@@ -1,6 +1,6 @@
 import { parse } from 'qs';
 import pathToRegexp from 'path-to-regexp';
-import { query, queryList } from '../services/poolService';
+import {  fetchPoolList, fetchPool } from '../services/poolService';
 import poolSelector from '../models/selectors';
 
 export default {
@@ -61,7 +61,7 @@ export default {
   effects: {
     * query({ payload }, { call, put }) {
       yield put({ type: 'showLoading' });
-      const { data } = yield call(queryList, parse(payload));
+      const { data } = yield call(fetchPoolList, parse(payload));
       if (data.data.dataList && data.data.dataList.length > 0) {
         yield put({
           type: 'updateQueryKey',
@@ -78,10 +78,22 @@ export default {
       } else {
         yield put({ type: 'hideLoading' });
       }
+    },
+    * fetchPool({ payload: id }, { call, put }) {
+      const { data } = yield call(fetchPool, id);
+      if (data.data) {
+        yield put({
+          type: 'showPool',
+          payload: {
+            currentItem: data.data,
+          },
+        });
+      } else {
+        yield put({ type: 'hideLoading' });
+      }
     }
   },
   reducers: {
-
     showLoading(state) {
       return { ...state, loading: true };
     },
@@ -95,6 +107,9 @@ export default {
       return { ...state, dataSource, pageNo, loading: false };
     },
     updateQueryKey(state, action) {
+      return { ...state, ...action.payload };
+    },
+    showPool(state, action) {
       return { ...state, ...action.payload };
     },
     showPoolPage(state, action) {

@@ -8,16 +8,8 @@ import styles from './PoolPage.less';
 
 const Item = List.Item;
 
-const PoolPage = ({ pools }) => {
+const PoolPage = ({ pools, loading }) => {
   const { currentItem } = pools;
-  const bgStyle = {
-    backgroundColor: '#aaa',
-    backgroundImage: 'url(http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr)',
-    backgroundSize: 'cover',
-    width: '100%',
-    height: '3rem'
-  };
-
   return (
     <div className={styles.page_container}>
       <NavBar
@@ -28,8 +20,8 @@ const PoolPage = ({ pools }) => {
       >
         游泳池详情
       </NavBar>
-      <List className={styles.test}>
-        <div style={bgStyle} />
+      <List className={styles.list}>
+        <img className={styles.photo} src={currentItem.spAvatar} alt="游泳池照片" />
         <div className={styles.address_line}>
           <div className={styles.address_item}>
             <div ><strong>{currentItem.spName}</strong></div>
@@ -85,5 +77,5 @@ PoolPage.propTypes = {
 
 };
 
-const mapStateToProps = ({ pools }) => ({ pools });
+const mapStateToProps = state => ({ pools: state.pools, loading: state.loading.global });
 export default connect(mapStateToProps)(PoolPage);

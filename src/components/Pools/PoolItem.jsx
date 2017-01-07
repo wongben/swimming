@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Link, hashHistory } from 'dva/router';
+import { Link } from 'dva/router';
 import styles from './PoolItem.less';
 
 const PoolItem = ({ rowData, sectionId, rowId }) => (

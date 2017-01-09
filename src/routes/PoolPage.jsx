@@ -13,6 +13,7 @@ const PoolPage = ({ pools, loading }) => {
   return (
     <div className={styles.page_container}>
       <NavBar
+        iconName="left"
         leftContent="返回"
         style={{ backgroundColor: '#108ee9' }}
         mode="dark"

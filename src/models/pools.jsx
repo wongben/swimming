@@ -1,6 +1,6 @@
 import { parse } from 'qs';
 import pathToRegexp from 'path-to-regexp';
-import {  fetchPoolList, fetchPool } from '../services/poolService';
+import { fetchPoolList, fetchPool } from '../services/poolService';
 
 export default {
   namespace: 'pools',
@@ -85,7 +85,7 @@ export default {
           },
         });
       }
-    }
+    },
   },
   reducers: {
     showMessage(state) {},

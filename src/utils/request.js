@@ -5,6 +5,7 @@ function parseJSON(response) {
 }
 
 function checkStatus(response) {
+  //noinspection Eslint
   if (response.status >= 200 && response.status < 300) {
     return response;
   }

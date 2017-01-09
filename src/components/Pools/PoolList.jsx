@@ -13,7 +13,8 @@ const poolListView = ({ dataSource, loading, onEndReached }) => {
     <ListView
       dataSource={ds.cloneWithRows(dataSource)}
       renderSeparator={(sectionID, rowID) => (
-        <div key={`${sectionID}-${rowID}`} style={{ height: '0.25rem', backgroundColor: '#f5f5f9' }} />
+        // <div key={`${sectionID}-${rowID}`} style={{ height: '0.25rem', backgroundColor: '#f5f5f9' }} />
+        <div key={`${sectionID}-${rowID}`} />
       )}
       renderRow={renderRow}
       renderFooter={renderFooter}

@@ -1,6 +1,7 @@
 /* eslint import/extensions: 0 */
 import { WhiteSpace, WingBlank, Button, List, Icon, Flex, Tag, NavBar } from 'antd-mobile';
 import { connect } from 'dva';
+import { Link } from 'dva/router';
 import React, { PropTypes } from 'react';
 import { hashHistory } from 'dva/router';
 import StarIcons from '../components/Common/StarIcons';
@@ -52,7 +53,11 @@ const PoolPage = ({ pools, loading }) => {
         </Flex>
         <div className={styles.tag_container}>
           <Tag selected>相册</Tag>
-          <Tag selected>救生员</Tag>
+          <Tag selected>
+            <Link to={`LifeSaver`}>
+              救生员
+            </Link>
+          </Tag>
           <Tag selected>活动邀请</Tag>
           <Tag selected>明星教练</Tag>
         </div>

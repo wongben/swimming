@@ -21,7 +21,7 @@ if (!global.poolListData) {
         'temperature|20-30': 20,
         'score|1-5': 5,
         'rating|1-5': 1,
-        address: '@region'
+        address: '@city(true)'
       }],
       pageNo: 1,
       pageSize: 20,
@@ -63,6 +63,6 @@ module.exports = {
           dataList: data
         }
       });
-    },500);
-  },
+    },2200);
+  }
 };

@@ -1,5 +1,5 @@
 import dva from 'dva';
-import { hashHistory } from 'dva/router';
+import createLoading from 'dva-loading';
 import pools from './models/pools';
 import infos from './models/infos';
 import router from './router';
@@ -9,12 +9,10 @@ import './index.css';
 
 
 // 1. Initialize
-const app = dva({
-  history: hashHistory,
-});
+const app = dva();
 
 // 2. Plugins
-//app.use({});
+app.use(createLoading());
 
 // 3. Model
 app.model(pools);

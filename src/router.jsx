@@ -4,7 +4,11 @@ import Pools from './routes/Pools';
 import PoolPage from './routes/PoolPage';
 import Playground from './routes/Playground';
 import NotFound from './routes/NotFound';
+import Info from './routes/Info';
+import PhotoAlbum from './routes/photoAlbum';
+import Profile from './routes/Profile';
 import LifeSaver from './routes/LifeSaver';
+
 
 export default ({ history }) => {
   return (
@@ -16,6 +20,9 @@ export default ({ history }) => {
       <Route path="/info" component={Playground} />
       <Route path="/mine" component={Playground} />
       <Route path="/playground" component={Playground} />
+      <Route path="/info" component={Info} />  
+      <Route path="/photoAlbum" component={PhotoAlbum} />
+      <Route path="/profile" component={Profile} />      
       <Route path="/lifesaver" component={LifeSaver} />
       <Route path="*" component={NotFound} />
     </Router>

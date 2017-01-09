@@ -4,6 +4,7 @@ import Pools from './routes/Pools';
 import PoolPage from './routes/PoolPage';
 import Playground from './routes/Playground';
 import NotFound from './routes/NotFound';
+import LifeSaver from './routes/LifeSaver';
 
 export default ({ history }) => {
   return (
@@ -12,6 +13,7 @@ export default ({ history }) => {
       <Route path="/pools" component={Pools} />
       <Route path="/pools/:poolId" component={PoolPage} />
       <Route path="/playground" component={Playground} />
+      <Route path="/lifesaver" component={LifeSaver} />
       <Route path="*" component={NotFound} />
     </Router>
   );

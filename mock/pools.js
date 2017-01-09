@@ -59,7 +59,9 @@ module.exports = {
     setTimeout(function () {
       res.json({
         success: true,
-        data: data
+        data: {
+          dataList: data
+        }
       });
     },500);
   },

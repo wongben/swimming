@@ -1,6 +1,6 @@
 import { parse } from 'qs';
 import pathToRegexp from 'path-to-regexp';
-import {  fetchPoolList, fetchPool ,fetchInfo} from '../services/poolService';
+import { fetchPoolList, fetchPool } from '../services/poolService';
 import poolSelector from '../models/selectors';
 
 export default {
@@ -54,19 +54,7 @@ export default {
           });
         }
       });
-    },
-    infoPage({ dispatch, history }) {
-      return history.listen(({ pathname }) => {
-        const match = pathToRegexp('/info').exec(pathname);
-        if (match) {
-          dispatch({
-            type: 'fetchInfo',
-            payload:1
-          });
-        }
-      });
-    },
-
+    }
   },
   effects: {
     * query({ payload }, { call, put }) {
@@ -105,7 +93,6 @@ export default {
   },
   reducers: {
     showLoading(state) {
-      console.log('state',state);
       return { ...state, loading: true };
     },
     hideLoading(state) {
@@ -122,10 +109,6 @@ export default {
     },
     showPool(state, action) {
       return { ...state, ...action.payload };
-    },
-    showInfo(state,action){
-      console.log('here',state,action);
-      return {...state, ...action.payload}
     }
   }
 }

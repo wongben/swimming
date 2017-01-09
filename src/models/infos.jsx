@@ -1,6 +1,6 @@
 import { parse } from 'qs';
 import pathToRegexp from 'path-to-regexp';
-import { fetchInfo} from '../services/infoService';
+import { fetchInfo } from '../services/infoService';
 
 
 export default {
@@ -8,11 +8,11 @@ export default {
   state: {
     dataList: [],
     currentItem: {
-        title:'',
-        time: '',
-        contentTitle:'',
-        content:'',
-        id: '',
+      title: '',
+      time: '',
+      contentTitle: '',
+      content: '',
+      id: '',
     },
     loading: false,
     hadMore: true,
@@ -29,7 +29,7 @@ export default {
         if (match) {
           dispatch({
             type: 'fetchInfo',
-            payload:1
+            payload: 1
           });
         }
       });
@@ -37,22 +37,21 @@ export default {
 
   },
   effects: {
-    * fetchInfo({ payload: id }, { call, put }){
-        const showLoading = yield put({ type: 'showLoading' });
-        const { data } = yield call(fetchInfo,id);
-        if(data){
-          yield put({
-            type: 'showInfo',
-            payload: {
-              dataList: data.data,
-            },
-          });
-        }
+    * fetchInfo({ payload: id }, { call, put }) {
+      const showLoading = yield put({ type: 'showLoading' });
+      const { data } = yield call(fetchInfo, id);
+      if (data) {
+        yield put({
+          type: 'showInfo',
+          payload: {
+            dataList: data.data,
+          },
+        });
       }
+    }
   },
   reducers: {
     showLoading(state) {
-      console.log('state',state);
       return { ...state, loading: true };
     },
     hideLoading(state) {
@@ -67,8 +66,8 @@ export default {
     updateQueryKey(state, action) {
       return { ...state, ...action.payload };
     },
-    showInfo(state,action){
-      return {...state, ...action.payload.dataList}
+    showInfo(state, action) {
+      return { ...state, ...action.payload.dataList }
     }
   }
 }

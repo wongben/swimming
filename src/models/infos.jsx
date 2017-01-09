@@ -2,6 +2,7 @@ import { parse } from 'qs';
 import pathToRegexp from 'path-to-regexp';
 import { fetchInfo } from '../services/infoService';
 
+
 export default {
   namespace: 'infos',
   state: {

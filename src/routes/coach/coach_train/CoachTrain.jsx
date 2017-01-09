@@ -12,6 +12,7 @@ const CoachTrain = () => {
   return (
     <div>
       <List renderHeader={() => (<div style={{fontSize: '32px'}}>培训班</div>)} className="train-list">
+        {/* todo // item */}
         <Item extra={<SignUp count='50'/>} multipleLine align="top" wrap>
           <div className={styles.item_title}>游泳吧普通班</div>
           <Brief>

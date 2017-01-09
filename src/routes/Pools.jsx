@@ -5,8 +5,8 @@ import { connect } from 'dva';
 import PoolList from '../components/Pools/PoolList';
 import styles from './Pools.less';
 
-const Pools = ({ location, dispatch, pools }) => {
-  const { dataSource, loading, pageNo, pageSize, hadMore, total, currentItem } = pools;
+const Pools = ({ location, dispatch, pools, loading }) => {
+  const { dataSource, pageNo, pageSize, hadMore, total } = pools;
   const onEndReached = (event) => {
     if (!loading && hadMore) {
       dispatch({
@@ -64,5 +64,5 @@ Pools.propTypes = {
   location: React.PropTypes.object
 };
 
-const mapStateToProps = ({ pools }) => ({ pools });
+const mapStateToProps = state => ({  pools: state.pools, loading: state.loading.global});
 export default connect(mapStateToProps)(Pools);

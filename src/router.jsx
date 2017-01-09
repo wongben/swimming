@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Router, Route, Redirect, IndexRoute, Link } from 'dva/router';
+import { Router, Route, Redirect } from 'dva/router';
 import Pools from './routes/Pools';
 import PoolPage from './routes/PoolPage';
 import Playground from './routes/Playground';

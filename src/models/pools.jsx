@@ -1,7 +1,6 @@
 import { parse } from 'qs';
 import pathToRegexp from 'path-to-regexp';
 import {  fetchPoolList, fetchPool } from '../services/poolService';
-import poolSelector from '../models/selectors';
 
 export default {
   namespace: 'pools',
@@ -23,7 +22,6 @@ export default {
       id: '',
       longitude: ''
     },
-    loading: false,
     hadMore: true,
     pageNo: 1,
     pageSize: 20,
@@ -31,8 +29,9 @@ export default {
     totalPage: 0,
     totalCount: 0
   },
+
   subscriptions: {
-    setup({ dispatch, history }) {
+    homePage({ dispatch, history }) {
       history.listen((location) => {
         if (location.pathname === '/pools') {
           dispatch({
@@ -43,21 +42,20 @@ export default {
       });
     },
 
-    poolSubscriber({ dispatch, history }) {
+    poolPage({ dispatch, history }) {
       return history.listen(({ pathname }) => {
         const match = pathToRegexp('/pools/:poolId').exec(pathname);
         if (match) {
-          console.info('poolSubscriber', match[1]);
           const poolId = match[1];
           dispatch({
-            type: 'showPoolPage',
+            type: 'fetchPool',
             payload: poolId,
           });
         }
       });
     },
-
   },
+
   effects: {
     * query({ payload }, { call, put }) {
       yield put({ type: 'showLoading' });
@@ -75,8 +73,6 @@ export default {
             pageNo: data.data.pageNo,
           },
         });
-      } else {
-        yield put({ type: 'hideLoading' });
       }
     },
     * fetchPool({ payload: id }, { call, put }) {
@@ -88,18 +84,10 @@ export default {
             currentItem: data.data,
           },
         });
-      } else {
-        yield put({ type: 'hideLoading' });
       }
     }
   },
   reducers: {
-    showLoading(state) {
-      return { ...state, loading: true };
-    },
-    hideLoading(state) {
-      return { ...state, loading: false, hadMore: false };
-    },
     showMessage(state) {},
     querySuccess(state, action) {
       const dataSource = state.dataSource.concat(action.payload.data);
@@ -111,10 +99,6 @@ export default {
     },
     showPool(state, action) {
       return { ...state, ...action.payload };
-    },
-    showPoolPage(state, action) {
-      console.info('showPool reducers', poolSelector(state, action.payload));
-      return { ...state, currentItem: poolSelector(state, action.payload) };
-    },
+    }
   }
 }

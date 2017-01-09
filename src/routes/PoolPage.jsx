@@ -1,25 +1,15 @@
 /* eslint import/extensions: 0 */
-import { WhiteSpace, WingBlank, Button, List, Icon, Card, Flex, Tag, TabBar, NavBar } from 'antd-mobile';
+import { WhiteSpace, WingBlank, Button, List, Icon, Flex, Tag, NavBar } from 'antd-mobile';
 import { connect } from 'dva';
 import React, { PropTypes } from 'react';
 import { hashHistory } from 'dva/router';
-import poolSelector from '../models/selectors';
 import StarIcons from '../components/Common/StarIcons';
 import styles from './PoolPage.less';
 
 const Item = List.Item;
-const Brief = Item.Brief;
 
-const PoolPage = ({ pools }) => {
+const PoolPage = ({ pools, loading }) => {
   const { currentItem } = pools;
-  const bgStyle = {
-    backgroundColor: '#aaa',
-    backgroundImage: `url(http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr)`,
-    backgroundSize: 'cover',
-    width: '100%',
-    minHeight: '3rem'
-  };
-
   return (
     <div className={styles.page_container}>
       <NavBar
@@ -30,19 +20,19 @@ const PoolPage = ({ pools }) => {
       >
         游泳池详情
       </NavBar>
-      <List className={styles.test}>
-        <div style={bgStyle} />
+      <List className={styles.list}>
+        <img className={styles.photo} src={currentItem.spAvatar} alt="游泳池照片" />
         <div className={styles.address_line}>
           <div className={styles.address_item}>
-            <div ><strong>1111</strong></div>
-            <div className={styles.address_phone}>电话：<span>1388888888</span></div>
+            <div ><strong>{currentItem.spName}</strong></div>
+            <div className={styles.address_phone}>电话：<span>{currentItem.phone}</span></div>
           </div>
           <div className={styles.number_item}>
-            <div className={styles.current_number}>  定员 : 60人</div>
-            <div className={styles.entered_number}>已入场 : 50人</div>
+            <div className={styles.current_number}>  定员 : {currentItem.fixedNumber}人</div>
+            <div className={styles.entered_number}>已入场 : {currentItem.arrivedNumber}人</div>
           </div>
         </div>
-        <Item style={{ borderBottom: '1px solid #ddd'}}>
+        <Item style={{ borderBottom: '1px solid #ddd' }}>
           <Flex direction="row" justify="between" className={styles.mark}>
             <Flex.Item>评分 : <StarIcons currentStarNumber="4" maxStarNumber="5" /></Flex.Item>
             <Icon type="phone" className={styles.phone_style} />
@@ -65,10 +55,10 @@ const PoolPage = ({ pools }) => {
           <Tag selected>活动邀请</Tag>
           <Tag selected>明星教练</Tag>
         </div>
-        <div style={{ height: '0.3rem',background: '#f5f5f9',borderBottom: '1px solid #ddd' }} />
+        <div style={{ height: '0.3rem', background: '#f5f5f9', borderBottom: '1px solid #ddd' }} />
         <Item>
-          <Flex style={{ color:'#666'}}>
-            <Flex.Item>水质 : <span className={styles.water_quality}>{currentItem.waterQuality}优</span></Flex.Item>
+          <Flex style={{ color: '#666' }}>
+            <Flex.Item>水质 : <span className={styles.water_quality}>{currentItem.waterQuality}</span></Flex.Item>
             <Flex.Item>水温 : <span className={styles.water_temp}>{currentItem.temperature} &#8451;</span></Flex.Item>
           </Flex>
         </Item>
@@ -80,15 +70,12 @@ const PoolPage = ({ pools }) => {
         </WingBlank>
       </div>
     </div>
-  )};
+  )
+};
 
 PoolPage.propTypes = {
 
 };
 
-
-// const mapStateToProps = (state, ownProps) => ({
-//   currentItem: poolSelector(state, ownProps)
-// });
-const mapStateToProps = ({ pools }) => ({ pools });
+const mapStateToProps = state => ({ pools: state.pools, loading: state.loading.global });
 export default connect(mapStateToProps)(PoolPage);

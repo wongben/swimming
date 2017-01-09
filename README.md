@@ -23,8 +23,8 @@ npm start
   npm install eslint -g 
   npm install eslint-config-airbnb -g 
   npm install eslint-plugin-jsx-a11y@2.2.2 -g 
-  npm install esling-plugin-import -g 
-  npm install esling-plugin-react-g
+  npm install eslint-plugin-import -g 
+  npm install eslint-plugin-react -g
 ```
 3.2 WebStorm config eslint, Google yourself.
 

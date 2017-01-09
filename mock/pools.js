@@ -2,21 +2,26 @@
 
 const qs = require('qs');
 const mockjs = require('mockjs');
-
+const pathToRegexp = require('path-to-regexp');
 // 数据持久
+
 let poolListData = {};
 if (!global.poolListData) {
   const data = mockjs.mock({
     'data': {
       'dataList|50': [{
-        'id|+1': 1,
+        'id': '@string("lower", 32)',
         spName: '@cname',
-          spAvatar: 'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr',
+        spAvatar: 'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr',
+        'phone|18688888888-1869999999': 18688888888,
         'price|11-99': 1,
         'fixedNumber|11-99': 1,
+        'arrivedNumber|11-99': 1,
+        'waterQuality':'优',
+        'temperature|20-30': 20,
+        'score|1-5': 5,
         'rating|1-5': 1,
-        'status|1-2': 1,
-        address: '@region'
+        address: '@city(true)'
       }],
       pageNo: 1,
       pageSize: 20,
@@ -49,23 +54,14 @@ module.exports = {
       });
     },500);
   },
-  'GET /swim/pools/' (req, res) {
-    const page = qs.parse(req.query);
-    const pageSize = page.pageSize || 10;
-    const currentPage = page.pageNo || 1;
-    let data = poolListData.data.dataList.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  'GET /swim/pools/public/:id' (req, res) {
+    const data = poolListData.data.dataList.find(item => item.id == req.params.id);
     setTimeout(function () {
       res.json({
         success: true,
-        data: {
-          dataList: data,
-          pageNo: currentPage * 1,
-          pageSize: pageSize * 1,
-          pageCount: Math.ceil(poolListData.data.dataList.length / pageSize ),
-          totalCount: poolListData.data.totalCount
-        }
+        data: data
       });
-    },500);
+    },2200);
   }
 
 };

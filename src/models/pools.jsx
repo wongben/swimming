@@ -1,7 +1,6 @@
 import { parse } from 'qs';
 import pathToRegexp from 'path-to-regexp';
 import {  fetchPoolList, fetchPool } from '../services/poolService';
-import poolSelector from '../models/selectors';
 
 export default {
   namespace: 'pools',
@@ -23,7 +22,6 @@ export default {
       id: '',
       longitude: ''
     },
-    loading: false,
     hadMore: true,
     pageNo: 1,
     pageSize: 20,
@@ -31,6 +29,7 @@ export default {
     totalPage: 0,
     totalCount: 0
   },
+
   subscriptions: {
     homePage({ dispatch, history }) {
       history.listen((location) => {
@@ -55,8 +54,8 @@ export default {
         }
       });
     },
-
   },
+
   effects: {
     * query({ payload }, { call, put }) {
       yield put({ type: 'showLoading' });
@@ -74,8 +73,6 @@ export default {
             pageNo: data.data.pageNo,
           },
         });
-      } else {
-        yield put({ type: 'hideLoading' });
       }
     },
     * fetchPool({ payload: id }, { call, put }) {
@@ -87,18 +84,10 @@ export default {
             currentItem: data.data,
           },
         });
-      } else {
-        yield put({ type: 'hideLoading' });
       }
     }
   },
   reducers: {
-    showLoading(state) {
-      return { ...state, loading: true };
-    },
-    hideLoading(state) {
-      return { ...state, loading: false, hadMore: false };
-    },
     showMessage(state) {},
     querySuccess(state, action) {
       const dataSource = state.dataSource.concat(action.payload.data);

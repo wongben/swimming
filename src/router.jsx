@@ -5,6 +5,7 @@ import PoolPage from './routes/PoolPage';
 import Playground from './routes/Playground';
 import NotFound from './routes/NotFound';
 import LifeSaver from './routes/LifeSaver';
+import {CoachPage} from './routes/coach'
 
 export default ({ history }) => {
   return (
@@ -17,6 +18,7 @@ export default ({ history }) => {
       <Route path="/mine" component={Playground} />
       <Route path="/playground" component={Playground} />
       <Route path="/lifesaver" component={LifeSaver} />
+      <Route path="/coach" component={CoachPage} />
       <Route path="*" component={NotFound} />
     </Router>
   );

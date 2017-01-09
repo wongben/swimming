@@ -14,11 +14,11 @@ const getMenuKeyFromUrl = (pathname) => {
   return key;
 };
 
-const LayoutWithTabBar = ({ location, children, title = '', hiddenBack = false }) => (
+const LayoutWithTabBar = ({ location, children, title = '', hiddenBackButton = false, hiddenTabBar = false }) => (
   <div className={styles.normal}>
     <NavBar
-      iconName={hiddenBack ? 'false' : 'left'}
-      leftContent={hiddenBack ? '' : '返回'}
+      iconName={hiddenBackButton ? 'false' : 'left'}
+      leftContent={hiddenBackButton ? '' : '返回'}
       style={{ backgroundColor: '#108ee9' }}
       mode="dark"
       onLeftClick={() => { hashHistory.goBack(); }}
@@ -30,6 +30,7 @@ const LayoutWithTabBar = ({ location, children, title = '', hiddenBack = false }
       unselectedTintColor="#949494"
       tintColor="#33A3F4"
       barTintColor="white"
+      hidden={hiddenTabBar}
     >
       <TabBar.Item
         icon={{ uri: 'http://oiu42aq9j.bkt.clouddn.com/tabbar-home.png' }}

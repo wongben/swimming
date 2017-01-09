@@ -11,6 +11,9 @@ export default ({ history }) => {
       <Redirect from="/" to="/pools" />
       <Route path="/pools" component={Pools} />
       <Route path="/pools/:poolId" component={PoolPage} />
+      <Route path="/discount" component={Playground} />
+      <Route path="/info" component={Playground} />
+      <Route path="/mine" component={Playground} />
       <Route path="/playground" component={Playground} />
       <Route path="*" component={NotFound} />
     </Router>

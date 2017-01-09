@@ -52,7 +52,7 @@ module.exports = {
           totalCount: poolListData.data.totalCount
         }
       });
-    },500);
+    },200);
   },
   'GET /swim/pools/public/:id' (req, res) {
     const data = poolListData.data.dataList.find(item => item.id == req.params.id);
@@ -61,7 +61,7 @@ module.exports = {
         success: true,
         data: data
       });
-    },2200);
+    },200);
   }
 
 };

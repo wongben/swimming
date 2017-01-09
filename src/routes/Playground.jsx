@@ -1,6 +1,11 @@
 import React from 'react';
-import StarIcons from '../components/Common/StarIcons';
+import { connect } from 'dva';
+import LayoutWithTabBar from '../components/Layout/LayoutWithTabBar';
 
-const Playground = () => (<StarIcons currentStarNumber="4" maxStarNumber="5" />);
+const Playground = ({ location }) => (<LayoutWithTabBar location={location} />);
 
-export default Playground;
+function mapStateToProps({ pools }) {
+  return { pools };
+}
+
+export default connect(mapStateToProps)(Playground);

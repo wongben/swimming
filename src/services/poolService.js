@@ -12,7 +12,12 @@ export async function fetchPoolList(params) {
 }
 
 export async function fetchPool(id) {
+  console.log('running?')
   return request(`${baseURL}/swim/pools/public/${id}`);
+}
+
+export async function fetchInfo(id) {
+  return request(`${baseURL}/swim/info?id=1`);
 }
 
 export async function create(params) {

@@ -28,15 +28,15 @@ class CoachTop extends Component {
       <div className={styles.top_container}>
         <div className={styles.top_img_container}>
           <img className={styles.top_img}
-               src='http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'/>
+               src='http://oiu42aq9j.bkt.clouddn.com/my_digital.png'/>
+          <img className={styles.top_img}
+               src='http://oiu42aq9j.bkt.clouddn.com/my_digital.png'/>
           <img className={styles.top_img}
                src='http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'/>
           <img className={styles.top_img}
-               src='http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'/>
+               src='http://oiu42aq9j.bkt.clouddn.com/my_digital.png'/>
           <img className={styles.top_img}
-               src='http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'/>
-          <img className={styles.top_img}
-               src='http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'/>
+               src='http://oiu42aq9j.bkt.clouddn.com/my_digital.png'/>
         </div>
 
         <div style={{border: "#ddd 1px dashed"}}></div>

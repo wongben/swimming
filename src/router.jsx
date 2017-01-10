@@ -24,6 +24,7 @@ export default ({ history }) => {
       <Route path="/photoAlbum" component={PhotoAlbum} />
       <Route path="/profile" component={Profile} />      
       <Route path="/lifesaver" component={LifeSaver} />
+      <Route path="/profile" component={Profile} /> 
       <Route path="/coach" component={CoachPage} />
       <Route path="*" component={NotFound} />
     </Router>

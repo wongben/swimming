@@ -1,9 +1,13 @@
 /* eslint import/extensions: 0 */
-import { SearchBar } from 'antd-mobile';
+import { SearchBar ,Toast } from 'antd-mobile';
 import React, { PropTypes } from 'react';
 import { connect } from 'dva';
 import PoolList from '../components/Pools/PoolList';
 import LayoutWithTabBar from '../components/Layout/LayoutWithTabBar';
+import styles from './Pools.less';
+const showToast = () => {
+  Toast.info('暂时没有哦:)');
+}
 
 const Pools = ({ location, dispatch, pools, loading }) => {
   const { dataSource, pageNo, pageSize, hadMore, total } = pools;
@@ -17,9 +21,18 @@ const Pools = ({ location, dispatch, pools, loading }) => {
   };
   const poolListProps = { dataSource, onEndReached, loading };
   return (
-    <LayoutWithTabBar location={location} title="主页" hiddenBackButton="true">
-      <SearchBar placeholder="搜索" />
-      <PoolList {...poolListProps} />
+    <LayoutWithTabBar location={location} title="主页" hiddenBackButton="true" hiddenTabBar="true">
+      <SearchBar placeholder="搜索"/>
+      <div className={styles.head}>
+        <div><span>室内游泳馆</span></div>
+        <div className={styles.active}><span>室外游泳馆</span></div>
+        <div><span>水上世界</span></div>
+      </div>
+      <div className={styles.sort}>
+        <div onClick = {showToast}>水质<div className={styles.triangle}></div></div>
+        <div onClick = {showToast}>距离<div className={styles.triangle}></div></div>
+        <div onClick = {showToast} className={styles.active}>人气<div className={styles.triangle}></div></div>
+      </div>
     </LayoutWithTabBar>
   );
 };

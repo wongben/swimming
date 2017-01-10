@@ -1,7 +1,7 @@
 /* eslint import/extensions: 0 */
+import { WhiteSpace, WingBlank, Button, List, Icon, Flex, Tag, NavBar } from 'antd-mobile';
 import React, { PropTypes } from 'react';
 import { connect } from 'dva';
-import { List } from 'antd-mobile';
 import styles from './Profile.less';
 
 const Item = List.Item;

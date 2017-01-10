@@ -15,6 +15,7 @@ const Profile = React.createClass({
           <header>
             <img src="http://oiu42aq9j.bkt.clouddn.com/my_digital.png" alt="" />
           </header>
+          <div className={styles.my_name}>游啊游</div>
           <nav className={styles.navList}>
             <ul>
               <li>

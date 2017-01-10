@@ -33,7 +33,6 @@ const Pools = ({ location, dispatch, pools, loading }) => {
         <div onClick = {showToast}>距离<div className={styles.triangle}></div></div>
         <div onClick = {showToast} className={styles.active}>人气<div className={styles.triangle}></div></div>
       </div>
-      <PoolList {...poolListProps} />
     </LayoutWithTabBar>
   );
 };

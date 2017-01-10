@@ -1,26 +1,19 @@
 /* eslint import/extensions: 0 */
 import { WhiteSpace, WingBlank, Button, List, Icon, Flex, Tag, NavBar } from 'antd-mobile';
 import { connect } from 'dva';
+import { Link } from 'dva/router';
 import React, { PropTypes } from 'react';
 import { hashHistory } from 'dva/router';
 import StarIcons from '../components/Common/StarIcons';
+import LayoutWithTabBar from '../components/Layout/LayoutWithTabBar';
 import styles from './PoolPage.less';
 
 const Item = List.Item;
 
-const PoolPage = ({ pools, loading }) => {
+const PoolPage = ({ location, pools, loading }) => {
   const { currentItem } = pools;
   return (
-    <div className={styles.page_container}>
-      <NavBar
-        iconName="left"
-        leftContent="返回"
-        style={{ backgroundColor: '#108ee9' }}
-        mode="dark"
-        onLeftClick={() => { hashHistory.goBack(); }}
-      >
-        游泳池详情
-      </NavBar>
+    <LayoutWithTabBar location={location} title="游泳池详情" hiddenTabBar="true">
       <List className={styles.list}>
         <img className={styles.photo} src={currentItem.spAvatar} alt="游泳池照片" />
         <div className={styles.address_line}>
@@ -52,7 +45,11 @@ const PoolPage = ({ pools, loading }) => {
         </Flex>
         <div className={styles.tag_container}>
           <Tag selected>相册</Tag>
-          <Tag selected>救生员</Tag>
+          <Tag selected>
+            <Link to={`LifeSaver`}>
+              救生员
+            </Link>
+          </Tag>
           <Tag selected>活动邀请</Tag>
           <Tag selected>明星教练</Tag>
         </div>
@@ -70,7 +67,7 @@ const PoolPage = ({ pools, loading }) => {
           <Button className="btn" type="primary" size="large">选择票券</Button>
         </WingBlank>
       </div>
-    </div>
+    </LayoutWithTabBar>
   )
 };
 

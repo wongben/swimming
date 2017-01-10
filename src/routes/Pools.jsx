@@ -17,7 +17,7 @@ const Pools = ({ location, dispatch, pools, loading }) => {
   };
   const poolListProps = { dataSource, onEndReached, loading };
   return (
-    <LayoutWithTabBar location={location} title="主页" hiddenBackButton="true" hiddenTabBar="true">
+    <LayoutWithTabBar location={location} title="主页" hiddenBackButton="true">
       <SearchBar placeholder="搜索" />
       <PoolList {...poolListProps} />
     </LayoutWithTabBar>

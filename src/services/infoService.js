@@ -4,7 +4,7 @@ import request from '../utils/request';
 const baseURL = HOST;
 
 export async function fetchInfo(id) {
-  return request(`${baseURL}/swim/info`);
+  return request(`${baseURL}/swim/info/${id}`);
 }
 
 

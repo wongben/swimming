@@ -6,7 +6,8 @@ import { fetchInfo } from '../services/infoService';
 export default {
   namespace: 'infos',
   state: {
-    data: [],
+    data: {
+    },
     currentItem: {
       title: '',
       time: '',
@@ -44,7 +45,7 @@ export default {
         yield put({
           type: 'showInfo',
           payload: {
-            data: data.data.dataList,
+            data
           },
         });
       }

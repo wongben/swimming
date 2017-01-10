@@ -13,10 +13,10 @@ if (!global.infoListData) {
       'dataList|4': [{
         'name':'选项卡',
         'id': '@string("lower", 32)',
-        'title': Random.title(4),
+        'title': "全国游泳池昨天检查水质",
         'time': Random.datetime(),
-        'contentTitle':Random.title(2),
-        'content':Random.sentence(5),
+        'contentTitle':"记者徐杰摄影报道",
+        'content':"为进一步加强水质监测",
       }],
       pageNo: 1,
       pageSize: 20,
@@ -36,7 +36,9 @@ module.exports = {
     setTimeout(function () {
       res.json({
         success: true,
-        data: data
+        data: {
+           dataList: data,
+        }
       });
     },500);
   }

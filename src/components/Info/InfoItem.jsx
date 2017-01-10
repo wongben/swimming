@@ -13,29 +13,13 @@ function callback(dispatch) {
       payload:1
     });
 }
-const TabExample = ({dispatch,...info}) => {
-  const { infos } = {...info};
-  if(infos.data && infos.data.dataList && infos.data.dataList.length > 0){
-    return (
-      <div className={styles.item}>
-          <Tabs defaultActiveKey="0" onChange={callback.bind(this,dispatch)} >
-            {
-              infos.data.dataList.map((ele,index) => (
-                <TabPane tab={ele.name} key={index} className = {styles.item}>
-                    <InfoList {...ele}/>
-                </TabPane>))
-            }
-          </Tabs>
-          <WhiteSpace />
-        </div>
-    )
-  }else{
-    return (
-      <div></div>
-    )
-  }
-  
-}
-      
+const InfoItem = ({ dispatch, ...datas }) => {
+  const { data } = { ...datas };
+  return (
+    <div>
+      <InfoList {...data} />
+    </div>
+  )
+}   
 
-export default TabExample;
+export default InfoItem;

@@ -11,7 +11,8 @@
     "qs": "^6.3.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.0",
-    "react-lazyload": "^2.2.0"
+    "react-lazyload": "^2.2.0",
+    "react-swipes": "^1.0.4"
   },
   "devDependencies": {
     "atool-build": "^0.9.3",

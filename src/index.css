@@ -1,4 +1,5 @@
 
+/*noinspection CssInvalidPseudoSelector*/
 html, body, :global(#root) {
     height: 100%;
     font-size: 0.2rem;

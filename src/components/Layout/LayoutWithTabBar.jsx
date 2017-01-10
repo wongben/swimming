@@ -47,6 +47,9 @@ const LayoutWithTabBar = ({ location, children, title = '', hiddenBackButton = f
         key="discount"
         data-seed="logId"
         selected={getMenuKeyFromUrl(location.pathname) === 'discount'}
+        onPress={() => {
+            console.log('1')
+          }}
       />
       <TabBar.Item
         icon={{ uri: 'http://oiu42aq9j.bkt.clouddn.com/tabbar-info.png' }}
@@ -69,7 +72,6 @@ const LayoutWithTabBar = ({ location, children, title = '', hiddenBackButton = f
 );
 
 LayoutWithTabBar.propTypes = {
-  //children: PropTypes.arrayOf(PropTypes.element).isRequired,
   location: PropTypes.object,
 };
 

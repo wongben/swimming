@@ -8,8 +8,10 @@ import Info from './routes/Info';
 import PhotoAlbum from './routes/photoAlbum';
 import Profile from './routes/Profile';
 import LifeSaver from './routes/LifeSaver';
-import { CoachPage } from './routes/coach'
-
+import Tickets from './routes/Tickets';
+import {CoachPage} from './routes/coach';
+import NewsDetails from './routes/NewsDetails';
+import Preferential from './routes/Preferential';
 
 export default ({ history }) => {
   return (
@@ -17,15 +19,17 @@ export default ({ history }) => {
       <Redirect from="/" to="/pools" />
       <Route path="/pools" component={Pools} />
       <Route path="/pools/:poolId" component={PoolPage} />
-      <Route path="/discount" component={Playground} />
+      <Route path="/discount" component={Preferential} />
       <Route path="/mine" component={Playground} />
       <Route path="/playground" component={Playground} />
-      <Route path="/info" component={Info} />  
+      <Route path="/info" component={Info} />
       <Route path="/photoAlbum" component={PhotoAlbum} />
-      <Route path="/profile" component={Profile} />      
+      <Route path="/profile" component={Profile} />
       <Route path="/lifesaver" component={LifeSaver} />
-      <Route path="/profile" component={Profile} /> 
+      <Route path="/profile" component={Profile} />
       <Route path="/coach" component={CoachPage} />
+      <Route path="/ticket" component={Tickets} />
+      <Route path="/news" component={NewsDetails} />
       <Route path="*" component={NotFound} />
     </Router>
   );

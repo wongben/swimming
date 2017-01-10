@@ -16,8 +16,10 @@ const CoachPage = () => (
                       style={{display: 'flex', flexDirection: 'column'}}
                       location={'coach'} hiddenTabBar="true">
 
-      <CoachTop/>
-      <CoachTrain/>
+      <div >
+        <CoachTop/>
+        <CoachTrain/>
+      </div>
     </ LayoutWithTabBar >
   </div>
 );

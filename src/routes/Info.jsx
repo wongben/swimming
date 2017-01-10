@@ -7,14 +7,22 @@ import LayoutWithTabBar from '../components/Layout/LayoutWithTabBar';
 //引入    PoolList   ???
 import styles from './Pools.less';
 
-const Info = ({ location, infos }) => {
+const Info = ({ location, dispatch, infos }) => {
+  const handleClick = (state) => {
+    const { id } = state;
+    dispatch({
+      type: 'infos/fetchInfo',
+      payload: id
+    });
+  }
   return (
     <div>
       <LayoutWithTabBar
         title="信息"
         style={{ display: 'flex', flexDirection: 'column' }}
-        location={location}>
-        <InfoItem {...infos} />
+        location={location}
+      >
+        <InfoItem {...infos} handleClick={handleClick} />
       </LayoutWithTabBar>
     </div>
   )

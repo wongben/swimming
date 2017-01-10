@@ -9,7 +9,7 @@ import PhotoAlbum from './routes/photoAlbum';
 import Profile from './routes/Profile';
 import LifeSaver from './routes/LifeSaver';
 import { CoachPage } from './routes/coach'
-
+import NewsDetails from './routes/NewsDetails';
 
 export default ({ history }) => {
   return (
@@ -20,12 +20,13 @@ export default ({ history }) => {
       <Route path="/discount" component={Playground} />
       <Route path="/mine" component={Playground} />
       <Route path="/playground" component={Playground} />
-      <Route path="/info" component={Info} />  
+      <Route path="/info" component={Info} />
       <Route path="/photoAlbum" component={PhotoAlbum} />
-      <Route path="/profile" component={Profile} />      
+      <Route path="/profile" component={Profile} />
       <Route path="/lifesaver" component={LifeSaver} />
-      <Route path="/profile" component={Profile} /> 
+      <Route path="/profile" component={Profile} />
       <Route path="/coach" component={CoachPage} />
+      <Route path="/news" component={NewsDetails} />
       <Route path="*" component={NotFound} />
     </Router>
   );

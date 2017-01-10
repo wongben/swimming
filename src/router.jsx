@@ -8,6 +8,7 @@ import Info from './routes/Info';
 import PhotoAlbum from './routes/photoAlbum';
 import Profile from './routes/Profile';
 import LifeSaver from './routes/LifeSaver';
+import Preferential from './routes/Preferential';
 import { CoachPage } from './routes/coach'
 
 
@@ -26,6 +27,7 @@ export default ({ history }) => {
       <Route path="/lifesaver" component={LifeSaver} />
       <Route path="/profile" component={Profile} /> 
       <Route path="/coach" component={CoachPage} />
+      <Route path="/preferential" component={Preferential} />
       <Route path="*" component={NotFound} />
     </Router>
   );

@@ -72,7 +72,6 @@ const LayoutWithTabBar = ({ location, children, title = '', hiddenBackButton = f
 );
 
 LayoutWithTabBar.propTypes = {
-  //children: PropTypes.arrayOf(PropTypes.element).isRequired,
   location: PropTypes.object,
 };
 

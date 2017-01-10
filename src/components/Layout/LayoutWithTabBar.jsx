@@ -44,9 +44,12 @@ const LayoutWithTabBar = ({ location, children, title = '', hiddenBackButton = f
         icon={{ uri: 'http://oiu42aq9j.bkt.clouddn.com/tabbar-discount.png' }}
         selectedIcon={{ uri: 'http://oiu42aq9j.bkt.clouddn.com/tabbar-discount-selected.png' }}
         title="优惠"
-        key="discount"
+        key="preferential"
         data-seed="logId"
-        selected={getMenuKeyFromUrl(location.pathname) === 'discount'}
+        selected={getMenuKeyFromUrl(location.pathname) === 'preferential'}
+        onPress={() => {
+            console.log('1')
+          }}
       />
       <TabBar.Item
         icon={{ uri: 'http://oiu42aq9j.bkt.clouddn.com/tabbar-info.png' }}

@@ -19,17 +19,19 @@ class SignUp extends Component {
   render() {
     return (
       <div className={style.container}>
-        <div className={style.xingqu}>
-          <div>
-            感兴趣
+        <div className={style.peixun}>
+          <div className={style.xingqu}>
+            <div>
+              感兴趣
+            </div>
+            <div>
+              {this.state.count}
+            </div>
           </div>
-          <div>
-            {this.state.count}
-          </div>
-        </div>
-        <div className={style.baoming}>
-          <div>
-            报名
+          <div className={style.baoming}>
+            <div>
+              报名
+            </div>
           </div>
         </div>
       </div>

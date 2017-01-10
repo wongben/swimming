@@ -11,23 +11,22 @@ const CoachTrain = () => {
   const Brief = Item.Brief;
   return (
     <div>
-      <List renderHeader={() => (<div style={{fontSize: '32px'}}>培训班</div>)} className="train-list">
-        {/* todo // item */}
-        <Item extra={<SignUp count='50'/>} multipleLine align="top" wrap>
+      <List renderHeader={() => (<div className={styles.item_header}>培训班</div>)} className="train-list">
+        <Item extra={<SignUp count='50'/>} multipleLine wrap>
           <div className={styles.item_title}>游泳吧普通班</div>
           <Brief>
             <div className={styles.item_sub_title}>4-6人班 ￥760/人</div>
           </Brief>
         </Item>
 
-        <Item extra={<SignUp/>} multipleLine align="top" wrap>
+        <Item extra={<SignUp/>} multipleLine align="middle" wrap>
           <div className={styles.item_title}>游泳吧普通班,游泳吧普通班,游泳吧普通班</div>
           <Brief>
-            <div className={styles.item_sub_title}>4-6人班 ￥760/人</div>
+            <div className={styles.item_sub_title}>4-6人班4-6人班4-6人班4-6人班4-6人班 ￥17760/人</div>
           </Brief>
         </Item>
 
-        <Item extra={<SignUp count={40}/>} multipleLine align="top" wrap>
+        <Item extra={<SignUp count={40}/>} multipleLine align="middle" wrap>
           <div className={styles.item_title}>游泳吧普通班,游泳吧普通班,游泳吧普通班</div>
           <Brief>
             <div className={styles.item_sub_title}>4-6人班4-6人班4-6人班4-6人班4-6人班 ￥1760/人</div>

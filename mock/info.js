@@ -10,13 +10,34 @@ let infoListData = {};
 if (!global.infoListData) {
   const data = mockjs.mock({
     'data': {
-      'dataList|4': [{
+      'dataList': [{
         'name':'选项卡',
-        'id': '@string("lower", 32)',
-        'title': Random.title(4),
+        'id': 1,
+        'title': "全国游泳池检查水质",
         'time': Random.datetime(),
-        'contentTitle':Random.title(2),
-        'content':Random.sentence(5),
+        'contentTitle':"记者徐杰摄影报道",
+        'content':"为进一步加强水质监测...",
+      },{
+        'name':'选项卡',
+        'id': 2,
+        'title': "全国游泳池检查水质1",
+        'time': Random.datetime(),
+        'contentTitle':"记者徐杰摄影报道",
+        'content':"为进一步加强水质监测....",
+      },{
+        'name':'选项卡',
+        'id': 3,
+        'title': "全国游泳池检查水质2",
+        'time': Random.datetime(),
+        'contentTitle':"记者徐杰摄影报道",
+        'content':"为进一步加强水质监测...",
+      },{
+        'name':'选项卡',
+        'id': 4,
+        'title': "全国游泳池检查水质3",
+        'time': Random.datetime(),
+        'contentTitle':"记者徐杰摄影报道",
+        'content':"为进一步加强水质监测...",
       }],
       pageNo: 1,
       pageSize: 20,
@@ -31,12 +52,14 @@ if (!global.infoListData) {
 }
 
 module.exports = {
-  'GET /swim/info' (req, res) {
-    let data = infoListData;
+  'GET /swim/info/:id' (req, res) {
+    const data = infoListData.data.dataList.filter(item => item.id == req.params.id);
     setTimeout(function () {
       res.json({
         success: true,
-        data: data
+        data: {
+           dataList: data,
+        }
       });
     },500);
   }

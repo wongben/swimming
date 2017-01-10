@@ -7,7 +7,7 @@ const Feedback = () => {
   return (
     <div className={styles.normal}>
       <NavBar
-        leftContent="返回"
+        leftContent=""
         style={{ backgroundColor: '#108ee9' }}
         mode="dark"
         onLeftClick={() => { hashHistory.goBack(); }}

@@ -11,13 +11,15 @@ import CoachTrain from './coach_train'
 
 
 const CoachPage = () => (
-
-  <LayoutWithTabBar title="教练"
-                    style={{display: 'flex', flexDirection: 'column'}}
-                    location={'coach'} hiddenTabBar="true">
-    <CoachTop/>
-    <CoachTrain/>
-  </ LayoutWithTabBar >
+  <div>
+      <LayoutWithTabBar title="教练"
+                      style={{display: 'flex', flexDirection: 'column'}}
+                      location={'coach'}>
+      <CoachTop/>
+      <CoachTrain/>
+    </ LayoutWithTabBar >
+  </div>
+  
 );
 
 CoachPage.propTypes = {

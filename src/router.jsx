@@ -8,7 +8,7 @@ import Info from './routes/Info';
 import PhotoAlbum from './routes/photoAlbum';
 import Profile from './routes/Profile';
 import LifeSaver from './routes/LifeSaver';
-import {CoachPage} from './routes/coach'
+import { CoachPage } from './routes/coach'
 
 
 export default ({ history }) => {
@@ -18,7 +18,6 @@ export default ({ history }) => {
       <Route path="/pools" component={Pools} />
       <Route path="/pools/:poolId" component={PoolPage} />
       <Route path="/discount" component={Playground} />
-      <Route path="/info" component={Playground} />
       <Route path="/mine" component={Playground} />
       <Route path="/playground" component={Playground} />
       <Route path="/info" component={Info} />  

@@ -5,11 +5,9 @@ import qs from 'qs';
 import request from '../utils/request';
 const baseURL = HOST;
 
-export async function fetchCoach(params) {
-  return request(`${baseURL}/swim/pools/public?${qs.stringify(params)}`);
-}
-
-export async function fetchPool(id) {
-  console.log('running?');
+export async function fetchCoach(id) {
   return request(`${baseURL}/swim/pools/public/${id}`);
+}
+export async function fetchTrainList(id) {
+  return request(`${baseURL}/swim/pools/public/trains/${id}`);
 }

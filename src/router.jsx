@@ -9,7 +9,7 @@ import PhotoAlbum from './routes/photoAlbum';
 import Profile from './routes/Profile';
 import LifeSaver from './routes/LifeSaver';
 import Tickets from './routes/Tickets';
-import {CoachPage} from './routes/coach';
+import CoachPage from './routes/CoachPage';
 import NewsDetails from './routes/NewsDetails';
 
 export default ({ history }) => {

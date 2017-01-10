@@ -63,7 +63,7 @@ class CoachTop extends Component {
                src='http://oiu42aq9j.bkt.clouddn.com/my_digital.png'/>
         </div>
 
-        <div style={{border: "#ddd 1px dashed"}}></div>
+        <div style={{border: "#ddd dashed", borderWidth: 1}}></div>
 
         {renderContent(this.state.index)}
       </div>

@@ -1,4 +1,4 @@
-mport { List, TextareaItem, NavBar, Icon, Button, WhiteSpace } from 'antd-mobile';
+import { List, TextareaItem, NavBar, Icon, Button, WhiteSpace, Toast } from 'antd-mobile';
 import { hashHistory } from 'dva/router';
 import React, { PropTypes } from 'react';
 import styles from './Feedback.less';
@@ -7,10 +7,11 @@ const Feedback = () => {
   return (
     <div className={styles.normal}>
       <NavBar
-        leftContent="返回"
+        leftContent=""
         style={{ backgroundColor: '#108ee9' }}
         mode="dark"
         onLeftClick={() => { hashHistory.goBack(); }}
+        rightContent={<Button className={styles.nav_right_item}  activeStyle={false} onClick={()=>{Toast.info("提交成功")}} >提交</Button>}
       >
         意见反馈
       </NavBar>

@@ -7,7 +7,7 @@ const WaterQuality = () => {
     <div className={styles.normal}>
       {/*导航栏*/}
       <NavBar
-        className={styles.navBar}
+        style={{ backgroundColor: '#108ee9' }}
         leftContent=""
         mode="dark"
         onLeftClick={() => console.log('onLeftClick')}

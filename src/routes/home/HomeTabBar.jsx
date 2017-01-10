@@ -6,7 +6,7 @@ import {connect} from 'dva';
 import styles from './HomeTabBar.less';
 import TabBarContent from './TabBarContent';
 
-const HomeTabBar = ({ dispatch, global, pools, loading, title = '', hiddenBackButton = false, hiddenTabBar = false}) => {
+const HomeTabBar = ({ dispatch, global, pools, infos, loading, title = '', hiddenBackButton = false, hiddenTabBar = false}) => {
   return (
     <div className={styles.normal}>
       <NavBar
@@ -20,7 +20,7 @@ const HomeTabBar = ({ dispatch, global, pools, loading, title = '', hiddenBackBu
       >
         {title}
       </NavBar>
-      {<TabBarContent dispatch={dispatch} pools={pools} loading={loading} global={global} />}
+      {<TabBarContent dispatch={dispatch} pools={pools} loading={loading} global={global} infos={infos}/>}
       <TabBar
         unselectedTintColor="#949494"
         tintColor="#33A3F4"
@@ -70,6 +70,11 @@ const HomeTabBar = ({ dispatch, global, pools, loading, title = '', hiddenBackBu
               type: 'global/changeTabBarIndex',
               payload: 3
             });
+            dispatch({
+              type: 'infos/fetchInfo',
+              payload: 1
+            });
+
           }
           }
         />

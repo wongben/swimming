@@ -13,6 +13,8 @@ import CoachPage from './routes/CoachPage';
 import NewsDetails from './routes/NewsDetails';
 import Preferential from './routes/Preferential';
 import HomeTabBar from './routes/home/HomeTabBar';
+import WaterQuality from './routes/WaterQuality';
+import Feedback from './routes/Feedback';
 
 export default ({ history }) => {
   return (
@@ -32,6 +34,8 @@ export default ({ history }) => {
       <Route path="/coach" component={CoachPage} />
       <Route path="/ticket" component={Tickets} />
       <Route path="/news" component={NewsDetails} />
+      <Route path="/wq" component={WaterQuality} />
+      <Route path="/fb" component={Feedback} />
       <Route path="*" component={NotFound} />
     </Router>
   );

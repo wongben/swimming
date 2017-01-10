@@ -53,6 +53,7 @@ if (!global.infoListData) {
 
 module.exports = {
   'GET /swim/info/:id' (req, res) {
+    console.info('infoListData.data.dataList', infoListData);
     const data = infoListData.data.dataList.filter(item => item.id == req.params.id);
     setTimeout(function () {
       res.json({

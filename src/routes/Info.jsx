@@ -16,13 +16,7 @@ const Info = ({ location, dispatch, infos }) => {
   }
   return (
     <div>
-      <LayoutWithTabBar
-        title="信息"
-        style={{ display: 'flex', flexDirection: 'column' }}
-        location={location}
-      >
-        <InfoItem {...infos} handleClick={handleClick} />
-      </LayoutWithTabBar>
+      <InfoItem {...infos} handleClick={handleClick} />
     </div>
   )
 };

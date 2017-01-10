@@ -20,6 +20,9 @@ const Pools = ({ location, dispatch, pools, loading }) => {
     }
   };
   const poolListProps = { dataSource, onEndReached, loading };
+    console.log('dataSource',dataSource)
+     console.log('onEndReached',onEndReached)
+      console.log('loading',loading)
   return (
     <LayoutWithTabBar location={location} title="主页" hiddenBackButton="true" hiddenTabBar="true">
       <SearchBar placeholder="搜索"/>
@@ -33,6 +36,7 @@ const Pools = ({ location, dispatch, pools, loading }) => {
         <div onClick = {showToast}>距离<div className={styles.triangle}></div></div>
         <div onClick = {showToast} className={styles.active}>人气<div className={styles.triangle}></div></div>
       </div>
+      <PoolList {...poolListProps} />
     </LayoutWithTabBar>
   );
 };

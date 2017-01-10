@@ -8,6 +8,11 @@ import React, {
 } from 'react';
 import style from './SignUp.less'
 
+import {Toast} from 'antd-mobile';
+const showToast = () => {
+  Toast.info('暂未开放！');
+};
+
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +23,7 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div className={style.container}>
+      <div className={style.container}  onClick={showToast}>
         <div className={style.peixun}>
           <div className={style.xingqu}>
             <div>

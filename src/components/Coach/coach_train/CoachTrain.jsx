@@ -37,7 +37,7 @@ const CoachTrain = ({dataSource, loading}) => {
   const renderRow = (itemData, sectionId, rowId) => (
     <TrainItem itemData={itemData}/>);
   const renderFooter = () => (<div style={{padding: 5, textAlign: 'center'}}>
-    {loading ? '加载中...' : '我是有底线的'}</div>);
+    {loading ? '加载中...' : ''}</div>);
 
   return (
     <ListView style={{overflow: 'none'}}

@@ -51,7 +51,11 @@ const PoolPage = ({ location, pools, loading }) => {
             </Link>
           </Tag>
           <Tag selected>活动邀请</Tag>
-          <Tag selected>明星教练</Tag>
+          <Tag selected>
+            <Link to={`coach`}>
+              明星教练
+            </Link>
+          </Tag>
         </div>
         <div style={{ height: '0.3rem', background: '#f5f5f9', borderBottom: '1px solid #ddd' }} />
         <Item>

@@ -22,7 +22,7 @@ const data = [
 ];
 
 const CoachPage = ({location, dispatch, coaches, loading}) => {
-  const {dataSource, pageNo, pageSize, hadMore, total} = coaches;
+  // const {dataSource, pageNo, pageSize, hadMore, total} = coaches;
 
   return (
     <div>
@@ -37,13 +37,6 @@ const CoachPage = ({location, dispatch, coaches, loading}) => {
       </ LayoutWithTabBar >
     </div>
   );
-};
-
-CoachPage.propTypes = {
-  pageType: Number
-};
-CoachPage.defaultProps = {
-  pageType: 0
 };
 
 const mapStateToProps = state => ({pools: state.pools, loading: state.loading.global});

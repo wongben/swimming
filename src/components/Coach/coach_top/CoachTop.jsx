@@ -26,8 +26,8 @@ const renderContent = (index) => (
 
 class CoachTop extends Component {
 
-  constructor(...args) {
-    super(...args);
+  constructor(props) {
+    super(props);
     this.handleChange = this.handleChange.bind(this);
     this.state = {
       index: 2
@@ -71,7 +71,11 @@ class CoachTop extends Component {
   }
 }
 
-CoachTop.propTypes = {};
-CoachTop.defaultProps = {};
+CoachTop.propTypes = {
+  isLifeSaver: PropTypes.bool //是否是救生员页面
+};
+CoachTop.defaultProps = {
+  isLifeSaver: false
+};
 
 export default CoachTop;

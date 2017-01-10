@@ -11,6 +11,7 @@ import LifeSaver from './routes/LifeSaver';
 import Tickets from './routes/Tickets';
 import CoachPage from './routes/CoachPage';
 import NewsDetails from './routes/NewsDetails';
+import Preferential from './routes/Preferential';
 
 export default ({ history }) => {
   return (
@@ -18,7 +19,7 @@ export default ({ history }) => {
       <Redirect from="/" to="/pools" />
       <Route path="/pools" component={Pools} />
       <Route path="/pools/:poolId" component={PoolPage} />
-      <Route path="/discount" component={Playground} />
+      <Route path="/discount" component={Preferential} />
       <Route path="/mine" component={Playground} />
       <Route path="/playground" component={Playground} />
       <Route path="/info" component={Info} />

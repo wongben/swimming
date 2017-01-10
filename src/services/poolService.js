@@ -12,7 +12,6 @@ export async function fetchPoolList(params) {
 }
 
 export async function fetchPool(id) {
-  console.log('running?')
   return request(`${baseURL}/swim/pools/public/${id}`);
 }
 

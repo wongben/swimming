@@ -1,15 +1,13 @@
 /* eslint import/extensions: 0 */
 import { SearchBar ,Toast } from 'antd-mobile';
 import React, { PropTypes } from 'react';
-import { connect } from 'dva';
 import PoolList from '../components/Pools/PoolList';
-import LayoutWithTabBar from './home/HomeTabBar';
 import styles from './Pools.less';
 const showToast = () => {
   Toast.info('暂时没有哦:)');
 }
 
-const Pools = ({ location, dispatch, pools, loading }) => {
+const Pools = ({ dispatch, pools, loading }) => {
   const { dataSource, pageNo, pageSize, hadMore } = pools;
   const onEndReached = (event) => {
     if (!loading && hadMore) {
@@ -20,11 +18,8 @@ const Pools = ({ location, dispatch, pools, loading }) => {
     }
   };
   const poolListProps = { dataSource, onEndReached, loading };
-    console.log('dataSource',dataSource)
-     console.log('onEndReached',onEndReached)
-      console.log('loading',loading)
   return (
-    <LayoutWithTabBar location={location} title="主页" hiddenBackButton="true">
+    <div className={styles.normal}>
       <SearchBar placeholder="搜索"/>
       <div className={styles.head}>
         <div><span>室内游泳馆</span></div>
@@ -37,7 +32,7 @@ const Pools = ({ location, dispatch, pools, loading }) => {
         <div onClick = {showToast} className={styles.active}>人气<div className={styles.triangle}></div></div>
       </div>
       <PoolList {...poolListProps} />
-    </LayoutWithTabBar>
+    </div>
   );
 };
 
@@ -47,5 +42,4 @@ Pools.propTypes = {
   location: React.PropTypes.object
 };
 
-const mapStateToProps = state => ({ pools: state.pools, loading: state.loading.global });
-export default connect(mapStateToProps)(Pools);
+export default Pools;

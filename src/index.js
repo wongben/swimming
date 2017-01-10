@@ -1,13 +1,12 @@
 import dva from 'dva';
 import createLoading from 'dva-loading';
 import pools from './models/pools';
+import global from './models/global';
 import infos from './models/infos';
 import coaches from './models/coaches';
 import router from './router';
 import './index.html';
 import './index.css';
-//import './less/common/mixins.less'
-
 
 // 1. Initialize
 const app = dva();
@@ -16,6 +15,7 @@ const app = dva();
 app.use(createLoading());
 
 // 3. Model
+app.model(global);
 app.model(pools);
 app.model(infos);
 app.model(coaches);

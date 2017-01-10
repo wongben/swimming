@@ -23,7 +23,7 @@ export default {
       longitude: ''
     },
     hadMore: true,
-    pageNo: 1,
+    pageNo: 0,
     pageSize: 20,
     total: 0,
     totalPage: 0,
@@ -33,10 +33,14 @@ export default {
   subscriptions: {
     homePage({ dispatch, history }) {
       history.listen((location) => {
-        if (location.pathname === '/pools') {
+        if (location.pathname === '/pools' || location.pathname === '/home') {
+          console.info('homePage');
           dispatch({
             type: 'query',
-            payload: location.query,
+            payload: {
+              pageNo: 1,
+              pageSize: 20
+            }
           });
         }
       });
@@ -58,7 +62,6 @@ export default {
 
   effects: {
     * query({ payload }, { call, put }) {
-      yield put({ type: 'showLoading' });
       const { data } = yield call(fetchPoolList, parse(payload));
       if (data.data.dataList && data.data.dataList.length > 0) {
         yield put({
@@ -88,11 +91,11 @@ export default {
     },
   },
   reducers: {
-    showMessage(state) {},
     querySuccess(state, action) {
       const dataSource = state.dataSource.concat(action.payload.data);
+      const hadMore = ! (dataSource.length == action.payload.totalCount);
       const pageNo = action.payload.pageNo;
-      return { ...state, dataSource, pageNo, loading: false };
+      return { ...state, dataSource, pageNo, hadMore };
     },
     updateQueryKey(state, action) {
       return { ...state, ...action.payload };

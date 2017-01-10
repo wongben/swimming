@@ -12,12 +12,14 @@ import Tickets from './routes/Tickets';
 import CoachPage from './routes/CoachPage';
 import NewsDetails from './routes/NewsDetails';
 import Preferential from './routes/Preferential';
+import HomeTabBar from './routes/home/HomeTabBar';
 
 export default ({ history }) => {
   return (
     <Router history={history}>
       <Redirect from="/" to="/pools" />
-      <Route path="/pools" component={Pools} />
+      <Route path="/home" component={HomeTabBar} />
+      <Route path="/pools" component={HomeTabBar} />
       <Route path="/pools/:poolId" component={PoolPage} />
       <Route path="/discount" component={Preferential} />
       <Route path="/mine" component={Playground} />

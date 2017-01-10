@@ -5,7 +5,7 @@ import styles from './PoolItem.less';
 
 const PoolItem = ({ rowData, sectionId, rowId }) => (
   <div className={styles.item} key={rowId}>
-    <Link to={`pools/${rowData.id}`}>
+    <Link to={`/pools/${rowData.id}`}>
       <div className={styles.image}>
         <img src={rowData.spAvatar !== '' ? rowData.spAvatar : 'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'} alt={rowData.spAvatar} />
       </div>

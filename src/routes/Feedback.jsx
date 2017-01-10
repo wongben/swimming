@@ -1,4 +1,4 @@
-mport { List, TextareaItem, NavBar, Icon, Button, WhiteSpace } from 'antd-mobile';
+import { List, TextareaItem, NavBar, Icon, Button, WhiteSpace } from 'antd-mobile';
 import { hashHistory } from 'dva/router';
 import React, { PropTypes } from 'react';
 import styles from './Feedback.less';

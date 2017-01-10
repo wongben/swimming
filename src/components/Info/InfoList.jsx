@@ -4,24 +4,32 @@ import style from './InfoList.less';
 
 
 
-const InfoList = ({ items }) => {
-  const { dataList } = { items };
-  console.log('dataList', dataList);
+const InfoList = ({ ...items }) => {
+  let { dataList } = { ...items } || [];
+  if (!dataList) {
+    dataList = [];
+  }
   return (
-    <div className={style.item}>
-      <figure>
-        <img src="http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr" alt=""/>
-      </figure>
-      <section className={style.content}>
-        <header>
-          <p className={style.title}>WSH</p>
-          <p className={style.time}>1970</p>
-        </header>
-        <article>
-          <span className={style.infoTitle}>11</span>
-          <span className={style.infoContent}>11</span>
-        </article>
-      </section>
+    <div>
+      {
+        dataList.map((ele, index) => (
+          <div className={style.item} key={ele.id}>
+            <figure>
+              <img src="http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr" alt=""/>
+            </figure>
+            <section className={style.content}>
+              <header>
+                <p className={style.title}>{ele.title}</p>
+                <p className={style.time}>{ele.time}</p>
+              </header>
+              <article>
+                <span className={style.infoTitle}>{ele.contentTitle}</span>
+                <span className={style.infoContent}>{ele.content}</span>
+              </article>
+            </section>
+          </div>
+        ))     
+      }
     </div>
   )
 };

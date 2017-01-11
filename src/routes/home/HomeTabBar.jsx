@@ -39,7 +39,7 @@ const HomeTabBar = ({ dispatch, global, pools, infos, loading, title = '首页',
               type: 'global/changeTabBarIndex',
               payload: {
                 currentTabBarIndex: 1,
-                navTitle: '上海游泳场所'
+                navTitle: '首页'
               }
             });
           }

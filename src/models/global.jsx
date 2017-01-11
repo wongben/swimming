@@ -2,7 +2,7 @@ export default {
   namespace: 'global',
   state: {
     currentTabBarIndex : 1,
-    navTitle : ""
+    navTitle : "首页"
   },
   subscriptions: {},
   effects: {},

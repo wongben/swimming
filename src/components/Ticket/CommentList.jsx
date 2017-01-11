@@ -30,6 +30,70 @@ const CommentList = () => {
             </div>
           </div>
         </Item>
+
+        <Item multipleLine align="top" wrap>
+          <div className={styles.contain}>
+            <div className={styles.image}>
+              <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
+            </div>
+            <div className={styles.word}>
+              <div className={styles.item_title}>小杨</div>
+              <div className={styles.item_sub_title}>不错哦，水质很干净</div>
+            </div>
+            <div className={styles.star}>
+              <div className={styles.times}>2017-01-10</div>
+              <StarIcons currentStarNumber="3" maxStarNumber="5"/>
+            </div>
+          </div>
+        </Item>
+
+        <Item multipleLine align="top" wrap>
+          <div className={styles.contain}>
+            <div className={styles.image}>
+              <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
+            </div>
+            <div className={styles.word}>
+              <div className={styles.item_title}>小杨</div>
+              <div className={styles.item_sub_title}>不错哦，水质很干净</div>
+            </div>
+            <div className={styles.star}>
+              <div className={styles.times}>2017-01-10</div>
+              <StarIcons currentStarNumber="3" maxStarNumber="5"/>
+            </div>
+          </div>
+        </Item>
+
+        <Item multipleLine align="top" wrap>
+          <div className={styles.contain}>
+            <div className={styles.image}>
+              <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
+            </div>
+            <div className={styles.word}>
+              <div className={styles.item_title}>小杨</div>
+              <div className={styles.item_sub_title}>不错哦，水质很干净</div>
+            </div>
+            <div className={styles.star}>
+              <div className={styles.times}>2017-01-10</div>
+              <StarIcons currentStarNumber="3" maxStarNumber="5"/>
+            </div>
+          </div>
+        </Item>
+
+        <Item multipleLine align="top" wrap>
+          <div className={styles.contain}>
+            <div className={styles.image}>
+              <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
+            </div>
+            <div className={styles.word}>
+              <div className={styles.item_title}>小杨</div>
+              <div className={styles.item_sub_title}>不错哦，水质很干净</div>
+            </div>
+            <div className={styles.star}>
+              <div className={styles.times}>2017-01-10</div>
+              <StarIcons currentStarNumber="3" maxStarNumber="5"/>
+            </div>
+          </div>
+        </Item>
       </List>
     </div>
   );

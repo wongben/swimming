@@ -3,8 +3,7 @@ import { TabBar, SearchBar } from 'antd-mobile';
 import React, { PropTypes } from 'react';
 import { connect } from 'dva';
 import InfoItem from '../components/info/InfoItem';
-import LayoutWithTabBar from '../components/Layout/LayoutWithTabBar';
-//引入    PoolList   ???
+import LayoutWithTabBar from './home/HomeTabBar';
 import styles from './Pools.less';
 
 const Info = ({ location, dispatch, infos }) => {
@@ -17,19 +16,13 @@ const Info = ({ location, dispatch, infos }) => {
   }
   return (
     <div>
-      <LayoutWithTabBar
-        title="信息"
-        style={{ display: 'flex', flexDirection: 'column' }}
-        location={location}
-      >
-        <InfoItem {...infos} handleClick={handleClick} />
-      </LayoutWithTabBar>
+      <InfoItem {...infos} handleClick={handleClick} />
     </div>
   )
 };
 
 Info.propTypes = {
- 
+
 };
 
 const mapStateToProps = ({ infos }) => ({ infos });

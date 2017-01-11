@@ -40,6 +40,7 @@ export default {
   effects: {
     * fetchInfo({ payload: id }, { call, put }) {
       const showLoading = yield put({ type: 'showLoading' });
+      console.info('fetchInfo');
       const { data } = yield call(fetchInfo, id);
       if (data) {
         yield put({

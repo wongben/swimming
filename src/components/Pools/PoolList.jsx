@@ -3,7 +3,7 @@ import { ListView } from 'antd-mobile';
 import React, { PropTypes } from 'react';
 import PoolItem from './PoolItem';
 
-const poolListView = ({ dataSource, loading, onEndReached }) => {
+const PoolList = ({ dataSource, loading, onEndReached }) => {
   const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
   const renderRow = (rowData, sectionId, rowId) => (<PoolItem rowData={rowData} sectionId={sectionId} rowId={rowId} />);
   //列表Footer
@@ -18,7 +18,7 @@ const poolListView = ({ dataSource, loading, onEndReached }) => {
       )}
       renderRow={renderRow}
       renderFooter={renderFooter}
-      scrollRenderAheadDistance={900}
+      scrollRenderAheadDistance={600}
       onEndReached={onEndReached}
       onEndReachedThreshold={100}
       initialListSize={dataSource.length - 4}
@@ -27,9 +27,9 @@ const poolListView = ({ dataSource, loading, onEndReached }) => {
   );
 };
 
-poolListView.propTypes = {
+PoolList.propTypes = {
   loading: PropTypes.bool.isRequired,
 };
 
 
-export default poolListView;
+export default PoolList;

@@ -1,8 +1,6 @@
-import { WhiteSpace } from 'antd-mobile';
 import React, { PropTypes } from 'react';
 import style from './InfoList.less';
-
-
+import { Link } from 'dva/router';
 
 const InfoList = ({ ...items }) => {
   let { dataList } = { ...items } || [];
@@ -13,6 +11,7 @@ const InfoList = ({ ...items }) => {
     <div>
       {
         dataList.map((ele, index) => (
+          <Link to='news' style={{color: '#333'}}>
           <div className={style.item} key={ele.id}>
             <figure>
               <img src="http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr" alt=""/>
@@ -28,7 +27,8 @@ const InfoList = ({ ...items }) => {
               </article>
             </section>
           </div>
-        ))     
+          </Link>
+        ))
       }
     </div>
   )

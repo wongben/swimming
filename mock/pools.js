@@ -3,8 +3,8 @@
 const qs = require('qs');
 const mockjs = require('mockjs');
 const pathToRegexp = require('path-to-regexp');
-// 数据持久
 
+// 数据持久
 let poolListData = {};
 if (!global.poolListData) {
   const data = mockjs.mock({
@@ -59,9 +59,7 @@ module.exports = {
     setTimeout(function () {
       res.json({
         success: true,
-        data: {
-          dataList: data
-        }
+        data: data
       });
     },200);
   }

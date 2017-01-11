@@ -5,7 +5,7 @@ import { Link } from 'dva/router';
 import React, { PropTypes } from 'react';
 import { hashHistory } from 'dva/router';
 import StarIcons from '../components/Common/StarIcons';
-import LayoutWithTabBar from '../components/Layout/LayoutWithTabBar';
+import LayoutWithTabBar from './home/HomeTabBar';
 import styles from './PoolPage.less';
 
 const Item = List.Item;
@@ -13,7 +13,16 @@ const Item = List.Item;
 const PoolPage = ({ location, pools, loading }) => {
   const { currentItem } = pools;
   return (
-    <LayoutWithTabBar location={location} title="游泳池详情" hiddenTabBar="true">
+    <div className={styles.normal}>
+      <NavBar
+        style={{backgroundColor: '#108ee9'}}
+        mode="dark"
+        onLeftClick={ () => {
+          hashHistory.goBack();
+        }}
+      >
+        泳池详情
+      </NavBar>
       <List className={styles.list}>
         <img className={styles.photo} src={currentItem.spAvatar} alt="游泳池照片" />
         <div className={styles.address_line}>
@@ -44,7 +53,11 @@ const PoolPage = ({ location, pools, loading }) => {
           </Flex.Item>
         </Flex>
         <div className={styles.tag_container}>
-          <Tag selected>相册</Tag>
+          <Tag selected>
+            <Link to={'photoAlbum'}>
+            相册
+            </Link>
+          </Tag>
           <Tag selected>
             <Link to={`LifeSaver`}>
               救生员
@@ -68,10 +81,12 @@ const PoolPage = ({ location, pools, loading }) => {
       <div className={styles.button_container}>
         <WhiteSpace size="xs" />
         <WingBlank size="md">
-          <Button className="btn" type="primary" size="large">选择票券</Button>
+          <Link to={`ticket`}>
+            <Button className="btn" type="primary" size="large">选择票券</Button>
+          </Link>
         </WingBlank>
       </div>
-    </LayoutWithTabBar>
+    </div>
   )
 };
 

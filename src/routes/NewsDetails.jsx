@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './NewsDetails.less';
 import { WhiteSpace, WingBlank, Button, List, Icon, Flex, Tag, NavBar } from 'antd-mobile';
+import { hashHistory } from 'dva/router';
 
 const NewsDetails = ()=>
   <div className={styles.page_contral}>

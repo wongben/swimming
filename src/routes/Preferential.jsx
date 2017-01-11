@@ -28,7 +28,7 @@ function callback(key) {
     console.log('key', key);
   });
 }
-const Pools = ({location, dispatch, pools, loading}) => {
+const Preferential = ({location, dispatch, pools, loading}) => {
 
   const {dataSource, pageNo, pageSize, hadMore, total} = pools;
   const onEndReached = (event) => {
@@ -48,7 +48,6 @@ const Pools = ({location, dispatch, pools, loading}) => {
     loading
   };
   return (
-    <LayoutWithTabBar location={location} title="优惠活动" hiddenBackButton="true">
       <div className={styles.prefer_container}>
         <Tabs defaultActiveKey="1" animated={false} onChange={callback}>
           <TabPane tab="婴儿池" key="1">
@@ -103,9 +102,9 @@ const Pools = ({location, dispatch, pools, loading}) => {
                     <div >票数充足</div>
                   </div>
                 </div>
-             
-           
-              </div>           
+
+
+              </div>
             </div>
           </TabPane>
           <TabPane tab="室内游泳馆" key="2">
@@ -175,7 +174,7 @@ const Pools = ({location, dispatch, pools, loading}) => {
                     <div >票数充足</div>
                   </div>
                 </div>
-              </div>  
+              </div>
             </div>
           </TabPane>
           <TabPane tab="水上世界" key="4">
@@ -219,15 +218,14 @@ const Pools = ({location, dispatch, pools, loading}) => {
           </TabPane>
         </Tabs>
       </div>
-    </LayoutWithTabBar>
 
   );
 };
-Pools.propTypes = {
+Preferential.propTypes = {
   dispatch: React.PropTypes.func,
   pools: React.PropTypes.object,
   location: React.PropTypes.object
 };
 
 const mapStateToProps = state => ({pools: state.pools, loading: state.loading.global});
-export default connect(mapStateToProps)(Pools);
+export default connect(mapStateToProps)(Preferential);

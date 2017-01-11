@@ -3,6 +3,7 @@ import { WhiteSpace, WingBlank, Button, List, Icon, Flex, Tag, NavBar } from 'an
 import React, { PropTypes } from 'react';
 import { connect } from 'dva';
 import styles from './Profile.less';
+import { Link } from 'dva/router';
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -71,11 +72,12 @@ const Profile = React.createClass({
             >服务条款</Item>
           </List>
           <List>
+            <Link to='fb'>
             <Item
               thumb="http://oiu42aq9j.bkt.clouddn.com/my_advice.png"
               arrow="horizontal"
-              onClick={() => {}}
             >意见建议</Item>
+            </Link>
           </List>
           <List>
             <Item
@@ -91,8 +93,7 @@ const Profile = React.createClass({
 });
 
 Profile.propTypes = {
-  
+
 };
 
-const mapStateToProps = ({pools}) => ({pools});
-export default connect(mapStateToProps)(Profile);
+export default Profile;

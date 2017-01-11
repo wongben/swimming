@@ -40,28 +40,28 @@ const Profile = React.createClass({
               thumb="http://oiu42aq9j.bkt.clouddn.com/my_info.png"
               arrow="horizontal"
               onClick={() => {}}
-            >我的资料</Item>
+            ><span className={styles.nameList}>我的资料</span></Item>
           </List>
           <List>
             <Item
               thumb="http://oiu42aq9j.bkt.clouddn.com/my_activity.png"
               arrow="horizontal"
               onClick={() => {}}
-            >我的活动</Item>
+            ><span className={styles.nameList}>我的活动</span></Item>
           </List>
           <List>
             <Item
               thumb="http://oiu42aq9j.bkt.clouddn.com/my_order.png"
               arrow="horizontal"
               onClick={() => {}}
-            >我的订单</Item>
+            ><span className={styles.nameList}>我的订单</span></Item>
           </List>
           <List>
             <Item
               thumb="http://oiu42aq9j.bkt.clouddn.com/my_card.png"
               arrow="horizontal"
               onClick={() => {}}
-            >我的健康卡</Item>
+            ><span className={styles.nameList}>我的健康卡</span></Item>
           </List>
         </section>
         <section className={styles.contact}>
@@ -69,23 +69,23 @@ const Profile = React.createClass({
             <Item
               thumb="http://oiu42aq9j.bkt.clouddn.com/my_treaty.png"
               onClick={() => {}}
-            >服务条款</Item>
+            ><span className={styles.nameList}>服务条款</span></Item>
           </List>
           <List>
             <Link to='fb'>
             <Item
               thumb="http://oiu42aq9j.bkt.clouddn.com/my_advice.png"
               arrow="horizontal"
-            >意见建议</Item>
+            ><span className={styles.nameList}>意见建议</span></Item>
             </Link>
           </List>
           <List>
-            <Item
+            <Item className={styles.phone}
               extra="18765776566"
               thumb="http://oiu42aq9j.bkt.clouddn.com/my_tel.png"
               arrow="horizontal"
               onClick={() => {}}
-            >咨询电话</Item>
+            ><span className={styles.nameList}>咨询电话</span></Item>
           </List>
         </section>
       </div>);

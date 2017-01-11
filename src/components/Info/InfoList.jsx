@@ -3,10 +3,12 @@ import style from './InfoList.less';
 import { Link } from 'dva/router';
 
 const InfoList = ({ ...items }) => {
+  console.log({...items});
   let { dataList } = { ...items } || [];
   if (!dataList) {
     dataList = [];
   }
+  console.log(dataList);
   return (
     <div>
       {

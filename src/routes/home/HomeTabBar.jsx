@@ -6,7 +6,7 @@ import {connect} from 'dva';
 import styles from './HomeTabBar.less';
 import TabBarContent from './TabBarContent';
 
-const HomeTabBar = ({ dispatch, global, pools, infos, loading, title = '', hiddenBackButton = false, hiddenTabBar = false}) => {
+const HomeTabBar = ({ dispatch, global, pools, infos, loading, title = '', hiddenTabBar = false}) => {
   return (
     <div className={styles.normal}>
       <NavBar
@@ -18,7 +18,7 @@ const HomeTabBar = ({ dispatch, global, pools, infos, loading, title = '', hidde
           hashHistory.goBack();
         }}
       >
-        {title}
+        {global.navTitle}
       </NavBar>
       {<TabBarContent dispatch={dispatch} pools={pools} loading={loading} global={global} infos={infos}/>}
       <TabBar
@@ -37,7 +37,10 @@ const HomeTabBar = ({ dispatch, global, pools, infos, loading, title = '', hidde
           onPress={() => {
             dispatch({
               type: 'global/changeTabBarIndex',
-              payload: 1
+              payload: {
+                currentTabBarIndex: 1,
+                navTitle: '上海游泳场所'
+              }
             });
           }
           }
@@ -53,7 +56,10 @@ const HomeTabBar = ({ dispatch, global, pools, infos, loading, title = '', hidde
           onPress={() => {
             dispatch({
               type: 'global/changeTabBarIndex',
-              payload: 2
+              payload: {
+                currentTabBarIndex: 2,
+                navTitle: '优惠'
+              }
             });
           }
           }
@@ -68,7 +74,10 @@ const HomeTabBar = ({ dispatch, global, pools, infos, loading, title = '', hidde
           onPress={() => {
             dispatch({
               type: 'global/changeTabBarIndex',
-              payload: 3
+              payload: {
+                currentTabBarIndex: 3,
+                navTitle: '资讯'
+              }
             });
             dispatch({
               type: 'infos/fetchInfo',
@@ -88,7 +97,10 @@ const HomeTabBar = ({ dispatch, global, pools, infos, loading, title = '', hidde
           onPress={() => {
             dispatch({
               type: 'global/changeTabBarIndex',
-              payload: 4
+              payload: {
+                currentTabBarIndex: 4,
+                navTitle: '我的'
+              }
             });
           }
           }

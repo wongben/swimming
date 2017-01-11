@@ -41,7 +41,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
   const {dataSource, pageNo, pageSize, hadMore, total} = pools;
 
   return (
-    <div className={styles.prefer_container}  style={{paddingTop:'.9rem'}}>
+    <div className={styles.prefer_container}  style={{paddingTop:'.9rem',paddingBottom:'1.1rem'}}>
       <Tabs defaultActiveKey="1" onChange={callback}>
         <TabPane tab="婴儿池" key="1">
           <div className={styles.preferitem}>
@@ -71,7 +71,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
             <div className={styles.preferitem_cell}>
               <div className={styles.preferitem_box}>
                 <div className={styles.preferitem_photo}>
-                  <img src={'http://img.release.1yd.me/Fj5TGHDtBa9-JyTNx3-m9nsJCD3X'}/>
+                  <img src={'http://img.release.1yd.me/FrMCwHCN2ndqBs1MUW89CPC3wg0m'}/>
                 </div>
                 <div className={styles.preferitem_box_votes}>
                   <div >沈坚强俱乐部</div>
@@ -105,15 +105,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   <div >票数充足</div>
                 </div>
               </div>
-               <div className={styles.preferitem_box}>
-                <div className={styles.preferitem_photo}>
-                <img src={'http://img.release.1yd.me/FomVE-ZIAOp47FGK20kdLAInNrk8'}/>
-                </div>
-                <div className={styles.preferitem_box_votes}>
-                  <div>MOB迈博健身健身会所</div>
-                  <div >票数充足</div>
-                </div>
-              </div>
+            
             </div>
           </div>
         </TabPane>
@@ -137,11 +129,12 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   <div >票数充足</div>
                 </div>
               </div>
-           <div className={styles.preferitem_box}>
-                <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
+             <div className={styles.preferitem_box}>
+                <div className={styles.preferitem_photo}>
+                <img src={'http://img.release.1yd.me/FomVE-ZIAOp47FGK20kdLAInNrk8'}/>
                 </div>
                 <div className={styles.preferitem_box_votes}>
-                  <div>同润别庄游泳馆</div>
+                  <div>MOB迈博健身健身会所</div>
                   <div >票数充足</div>
                 </div>
               </div>
@@ -166,22 +159,6 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                 </div>
                 <div className={styles.preferitem_box_votes}>
                   <div>江东游泳馆</div>
-                  <div >票数充足</div>
-                </div>
-              </div>
-              <div className={styles.preferitem_box}>
-                <div className={styles.preferitem_photo}><img src={'http://image.mogoroom.com/mogoroom/2016-04/cms/7/0/13767/13767_1460018106136.jpg'}/>
-                </div>
-                <div className={styles.preferitem_box_votes}>
-                  <div>热带风暴水上乐园</div>
-                  <div >票数充足</div>
-                </div>
-              </div>
-              <div className={styles.preferitem_box}>
-                <div className={styles.preferitem_photo}><img src={'http://img.bendibao.com/shanghai/20116/23/2011623161141728.JPG'}/>
-                </div>
-                <div className={styles.preferitem_box_votes}>
-                  <div>南汇水上世界</div>
                   <div >票数充足</div>
                 </div>
               </div>

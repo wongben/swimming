@@ -17,11 +17,7 @@ const NewsDetails = ()=>
     <div className={styles.secondDiv}>
       <p className={styles.markText}>58家游泳场所进行水质的抽样检查</p>
       <p className={styles.timeText}>2010-10-06  16:00</p>
-      <img className={styles.pic} src="http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr" alt="" />
-
-    </div>
-    <div className={styles.thirdDiv}>
-
+      <div className={styles.picDiv}><img className={styles.pic} src="http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr" alt="" /></div>
       <p className={styles.bigOne}>
         记者徐婕摄影报道为进一步强化游泳池卫生场所卫生监管管理工作，确保游泳池场所安全，
         防止介水疾病和危害健康事故的发生。错昨日开始，上海市卫生局卫生执法监督开始2015年
@@ -32,6 +28,7 @@ const NewsDetails = ()=>
         样检查最终结果将于本月底在上海市卫生监管网进行公示，涉及不合格的游泳池。
       </p>
     </div>
+
   </div>
 
 export default NewsDetails;

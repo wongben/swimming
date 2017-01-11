@@ -12,7 +12,7 @@ const HomeTabBar = ({ dispatch, global, pools, infos, loading, title = '', hidde
       <NavBar
         iconName='false'
         leftContent=''
-        style={{backgroundColor: '#108ee9'}}
+        style={{backgroundColor: '#108ee9', position: 'fixed', width: '100%', top: '0px', zIndex: 9 }}
         mode="dark"
         onLeftClick={() => {
           hashHistory.goBack();
@@ -20,7 +20,9 @@ const HomeTabBar = ({ dispatch, global, pools, infos, loading, title = '', hidde
       >
         {global.navTitle}
       </NavBar>
-      {<TabBarContent dispatch={dispatch} pools={pools} loading={loading} global={global} infos={infos}/>}
+      <div style={{paddingTop: '.8rem'}}>
+        {<TabBarContent dispatch={dispatch} pools={pools} loading={loading} global={global} infos={infos}/>}
+      </div>
       <TabBar
         unselectedTintColor="#949494"
         tintColor="#33A3F4"

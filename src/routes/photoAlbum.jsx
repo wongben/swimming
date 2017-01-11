@@ -8,14 +8,13 @@ import style from './photoAlbum.less';
 
 const arrTaoPu = [
   {'src': 'http://img.release.1yd.me/FqJ-OlXAF3CJMrWBrvJd-wabkvFa'},
-  {'src': 'http://img.release.1yd.me/Fl6-gNrvLxp95x7ve__vNh3DtiZX'},
-  {'src': 'http://img.release.1yd.me/FtkElbazWUQC_XKztNWiCpKwj-0b'},
+  {'src': 'http://img.release.1yd.me/FnF9738e4om1m8rYWZaKvHWfMNLx'},
+  {'src': 'http://img.release.1yd.me/FlV30n21e7FXAm7WL_O4L1EVAIwT'},
   {'src': 'http://img.release.1yd.me/FiHJffr7xl-GS0TQz4UHR31lRFs5'},
   {'src': 'http://img.release.1yd.me/FkuBgmfL0EiOGxBrF9-W8E4zXiBN'},
   {'src': 'http://img.release.1yd.me/FoxjPafTiajKpCxqz5YtVa2OwaF2'},
   {'src': 'http://img.release.1yd.me/FvhRfnr_7yayFPBT4dij-x7Fxfn3'},
-  {'src': 'http://img.release.1yd.me/Fl6-gNrvLxp95x7ve__vNh3DtiZX'},
-  {'src': 'http://img.release.1yd.me/FlSo5CeNQO6tQGTLRY7qax8IdtMC'},
+  {'src': 'http://img.release.1yd.me/Fhp48PdEQvkNXb7DA_J0yAEHTaVu'},
 ];
 
 const arrCongMing = [

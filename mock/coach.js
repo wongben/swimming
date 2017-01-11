@@ -70,13 +70,13 @@ if (!global.coachInfoData) {
     ]
   });
   coachInfoData = data;
-  global.infoListData = coachInfoData;
+  global.coachInfoData = coachInfoData;
 } else {
   coachInfoData = global.coachInfoData;
 }
 
 module.exports = {
-  'GET /swim/info/:swimPoolId' (req, res) {
+  'GET /swim/coach/:swimPoolId' (req, res) {
     let data = coachInfoData;
     setTimeout(function () {
       res.json({

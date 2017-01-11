@@ -1,4 +1,4 @@
-import {TabBar, NavBar, Tabs, WhiteSpace, Toast} from 'antd-mobile';
+import {TabBar, NavBar, Tabs, WhiteSpace, Toast,RefreshControl, ListView} from 'antd-mobile';
 import React, {PropTypes} from 'react';
 import {connect} from 'dva';
 import PoolList from '../components/Pools/PoolList';
@@ -31,22 +31,22 @@ function callback(key) {
 const Preferential = ({location, dispatch, pools, loading}) => {
 
   const {dataSource, pageNo, pageSize, hadMore, total} = pools;
-  const onEndReached = (event) => {
-    if (!loading && hadMore) {
-      dispatch({
-        type: 'pools/query',
-        payload: {
-          pageNo: pageNo + 1,
-          pageSize
-        }
-      });
-    }
-  };
-  const poolListProps = {
-    dataSource,
-    onEndReached,
-    loading
-  };
+  // const onEndReached = (event) => {
+  //   if (!loading && hadMore) {
+  //     dispatch({
+  //       type: 'pools/query',
+  //       payload: {
+  //         pageNo: pageNo + 1,
+  //         pageSize
+  //       }
+  //     });
+  //   }
+  // };
+  // const poolListProps = {
+  //   dataSource,
+  //   onEndReached,
+  //   loading
+  // };
   return (
       <div className={styles.prefer_container}>
         <Tabs defaultActiveKey="1"  onChange={callback}>

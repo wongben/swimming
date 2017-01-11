@@ -39,6 +39,7 @@ const CoachPage = ({location, dispatch, coaches, loading}) => {
 
   return (
     <div>
+      {/*导航栏*/}
       <NavBar
         iconName="left"
         leftContent='返回'
@@ -48,6 +49,8 @@ const CoachPage = ({location, dispatch, coaches, loading}) => {
           hashHistory.goBack();
         }}
       >教练</NavBar>
+
+      {/* content */}
       <div style={{paddingTop: '.8rem'}}>
         <CoachTop/>
         <CoachTrain dataSource={data}/>

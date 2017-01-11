@@ -6,11 +6,23 @@ import TicketList from '../components/Ticket/TicketList';
 import MemberCardList from '../components/Ticket/MemberCardList';
 import CommentList from '../components/Ticket/CommentList';
 import styles from './Tickets.less';
-import LayoutWithTabBar from '../components/Layout/LayoutWithTabBar';
+// import LayoutWithTabBar from '../components/Layout/LayoutWithTabBar';
+import {NavBar} from 'antd-mobile';
+import {hashHistory} from 'dva/router';
 
 const Tickets = ({location}) => (
   <div>
-    <LayoutWithTabBar title="票券预定" style={{display: 'flex', flexDirection: 'column'}} location={location} hiddenTabBar="true">
+    <NavBar
+        iconName="left"
+        leftContent='返回'
+        style={{backgroundColor: '#108ee9', position: 'fixed', width: '100%', top: '0px', zIndex: 9}}
+        mode="dark"
+        onLeftClick={() => {
+          hashHistory.goBack();
+        }}
+      >票券预定
+    </NavBar>
+    <div style={{paddingTop: '.8rem'}}>
       <TicketList/>
       <div className={styles.card}>
         <img className={styles.card_img} src='http://oiu42aq9j.bkt.clouddn.com/my_advice.png'/>
@@ -18,7 +30,7 @@ const Tickets = ({location}) => (
       </div>
       <MemberCardList/>
       <CommentList/>
-    </ LayoutWithTabBar >
+    </div>
   </div>
 );
 

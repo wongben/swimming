@@ -49,7 +49,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
   };
   return (
       <div className={styles.prefer_container}>
-        <Tabs defaultActiveKey="1" animated={false} onChange={callback}>
+        <Tabs defaultActiveKey="1"  onChange={callback}>
           <TabPane tab="婴儿池" key="1">
             <div className={styles.preferitem}>
               <div className={styles.preferitem_cell}>
@@ -86,23 +86,6 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                     <div >票数充足</div>
                   </div>
                 </div>
-                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>宾利特健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
-                </div>
-                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>宾利特健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
-                </div>
-
 
               </div>
             </div>
@@ -115,7 +98,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                     <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
-                    <div>室内游泳健身会所(金仕堡)</div>
+                    <div >室内游泳健身会所</div>
                     <div >票数充足</div>
                   </div>
                 </div>
@@ -123,7 +106,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
-                    <div>室内游泳健身会所(金仕堡)</div>
+                    <div>室内游泳健身会所</div>
                     <div >票数充足</div>
                   </div>
                 </div>
@@ -131,7 +114,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
-                    <div>室内游泳健身会所(金仕堡)</div>
+                    <div>室内游泳健身会所</div>
                     <div >票数充足</div>
                   </div>
                 </div>
@@ -146,7 +129,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                     <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
-                    <div>室外游泳健身会所(金仕堡)</div>
+                    <div>室外游泳健身会所</div>
                     <div >票数充足</div>
                   </div>
                 </div>
@@ -154,7 +137,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
-                    <div>室外游泳健身会所(金仕堡)</div>
+                    <div>室外游泳健身会所</div>
                     <div >票数充足</div>
                   </div>
                 </div>
@@ -162,7 +145,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
-                    <div>室外游泳健身会所(金仕堡)</div>
+                    <div>室外游泳健身会所</div>
                     <div >票数充足</div>
                   </div>
                 </div>
@@ -170,7 +153,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
-                    <div>室外游泳健身会所(金仕堡)</div>
+                    <div>室外游泳健身会所</div>
                     <div >票数充足</div>
                   </div>
                 </div>
@@ -185,7 +168,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                     <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
-                    <div>水上世界健身会所(金仕堡)</div>
+                    <div>水上世界健身会所</div>
                     <div >票数充足</div>
                   </div>
                 </div>
@@ -193,7 +176,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
-                    <div>水上世界健身会所(金仕堡)</div>
+                    <div>水上世界健身会所</div>
                     <div >票数充足</div>
                   </div>
                 </div>
@@ -201,7 +184,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
-                    <div>水上世界健身会所(金仕堡)</div>
+                    <div>水上世界健身会所</div>
                     <div >票数充足</div>
                   </div>
                 </div>
@@ -209,7 +192,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
-                    <div>水上世界健身会所(金仕堡)</div>
+                    <div>水上世界健身会所</div>
                     <div >票数充足</div>
                   </div>
                 </div>

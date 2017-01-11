@@ -20,12 +20,12 @@ const InfoList = ({ ...items }) => {
             </figure>
             <section className={style.content}>
               <header>
-                <p className={style.title}>{ele.title}</p>
+                <h4 className={style.title}>{ele.title}</h4>
                 <p className={style.time}>{ele.time}</p>
               </header>
               <article>
                 <span className={style.infoTitle}>{ele.contentTitle}</span>
-                <span className={style.infoContent}>{ele.content}</span>
+                <span wrap="false" className={style.infoContent}>{ele.content.length > 25 ? `${ele.content.slice(0,25)}...` : ele.content}</span>
               </article>
             </section>
           </div>

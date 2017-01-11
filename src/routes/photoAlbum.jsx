@@ -35,7 +35,7 @@ const photo = ({location, dispatch, pools}) => {
     <div>
     <NavBar
     leftContent='返回'
-    style={{backgroundColor: '#108ee9'}}
+    style={{backgroundColor: '#108ee9', position: 'fixed', width: '100%', top: '0px', zIndex: 10 }}
     mode="dark"
     onLeftClick={() => {
       hashHistory.goBack();
@@ -43,7 +43,7 @@ const photo = ({location, dispatch, pools}) => {
   >
     相册
   </NavBar>
-    <section className={style.item}>
+    <section className={style.item} style={{paddingTop:'.9rem'}}>
       {
         arr.map((ele, index) => (
           <figure key={index} className={style.picture}>

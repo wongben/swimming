@@ -33,7 +33,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
   const {dataSource, pageNo, pageSize, hadMore, total} = pools;
 
   return (
-      <div className={styles.prefer_container}>
+      <div className={styles.prefer_container} style={{paddingTop:'.9rem'}}>
         <Tabs defaultActiveKey="1"  onChange={callback}>
           <TabPane tab="婴儿池" key="1">
             <div className={styles.preferitem}>

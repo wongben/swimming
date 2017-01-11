@@ -8,13 +8,13 @@ const NewsDetails = ()=>
     <NavBar
       iconName="left"
       leftContent="返回"
-      style={{ backgroundColor: '#108ee9' }}
+      style={{backgroundColor: '#108ee9', position: 'fixed', width: '100%', top: '0px', zIndex: 10 }}
       mode="dark"
       onLeftClick={() => { hashHistory.goBack(); }}
     >
       资讯详情
     </NavBar>
-    <div className={styles.secondDiv}>
+    <div className={styles.secondDiv} style={{paddingTop:'.9rem'}}>
       <p className={styles.markText}>58家游泳场所进行水质的抽样检查</p>
       <p className={styles.timeText}>2010-10-06  16:00</p>
       <div className={styles.picDiv}><img className={styles.pic} src="http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr" alt="" /></div>

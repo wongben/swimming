@@ -14,7 +14,9 @@ const Profile = React.createClass({
       <div style={{height: 'auto', paddingTop: '0.8rem'}}>
         <section className={styles.item}>
           <header>
-            <img src="http://oiu42aq9j.bkt.clouddn.com/my_digital.png" alt="" />
+          	<Link to={'personalInfo'}>
+          		<img src="http://oiu42aq9j.bkt.clouddn.com/my_digital.png" alt="" />
+          	</Link>
           </header>
           <div className={styles.my_name}>游啊游</div>
           <nav className={styles.navList}>
@@ -36,11 +38,13 @@ const Profile = React.createClass({
         </section>
         <section>
           <List>
-            <Item
-              thumb="http://oiu42aq9j.bkt.clouddn.com/my_info.png"
-              arrow="horizontal"
-              onClick={() => {}}
-            ><span className={styles.nameList}>我的资料</span></Item>
+          	<Link to={'personalInfo'}>
+	            <Item
+	              thumb="http://oiu42aq9j.bkt.clouddn.com/my_info.png"
+	              arrow="horizontal"
+	              onClick={() => {}}
+	            ><span className={styles.nameList}>我的资料</span></Item>
+            </Link>
           </List>
           <List>
             <Item

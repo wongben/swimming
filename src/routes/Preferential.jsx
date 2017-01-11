@@ -55,7 +55,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
               <div className={styles.preferitem_cell}>
                 <div className={styles.preferitem_box}>
                   <div className={styles.preferitem_photo}>
-                    <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
+                    <img src={'http://oiu42aq9j.bkt.clouddn.com/pool3.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div>宾利特健身会所(金仕堡)</div>
@@ -63,7 +63,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   </div>
                 </div>
                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
+                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/pool1.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div>宾利特健身会所(金仕堡)</div>
@@ -71,7 +71,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   </div>
                 </div>
                  <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
+                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/pool1.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div>宾利特健身会所(金仕堡)</div>
@@ -79,7 +79,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   </div>
                 </div>
                  <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
+                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/pool1.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div>宾利特健身会所(金仕堡)</div>
@@ -95,7 +95,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
               <div className={styles.preferitem_cell}>
                 <div className={styles.preferitem_box}>
                   <div className={styles.preferitem_photo}>
-                    <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
+                    <img src={'http://oiu42aq9j.bkt.clouddn.com/pool3.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div >室内游泳健身会所</div>
@@ -103,7 +103,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   </div>
                 </div>
                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
+                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/pool1.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div>室内游泳健身会所</div>
@@ -111,7 +111,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   </div>
                 </div>
                  <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
+                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/pool1.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div>室内游泳健身会所</div>
@@ -126,7 +126,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
               <div className={styles.preferitem_cell}>
                 <div className={styles.preferitem_box}>
                   <div className={styles.preferitem_photo}>
-                    <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
+                    <img src={'http://oiu42aq9j.bkt.clouddn.com/pool3.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div>室外游泳健身会所</div>
@@ -134,7 +134,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   </div>
                 </div>
                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
+                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/pool1.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div>室外游泳健身会所</div>
@@ -142,7 +142,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   </div>
                 </div>
                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
+                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/pool1.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div>室外游泳健身会所</div>
@@ -150,7 +150,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   </div>
                 </div>
                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
+                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/pool1.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div>室外游泳健身会所</div>
@@ -165,7 +165,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
               <div className={styles.preferitem_cell}>
                 <div className={styles.preferitem_box}>
                   <div className={styles.preferitem_photo}>
-                    <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
+                    <img src={'http://oiu42aq9j.bkt.clouddn.com/pool3.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div>水上世界健身会所</div>
@@ -173,7 +173,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   </div>
                 </div>
                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
+                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/pool1.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div>水上世界健身会所</div>
@@ -181,7 +181,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   </div>
                 </div>
                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
+                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/pool1.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div>水上世界健身会所</div>
@@ -189,7 +189,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   </div>
                 </div>
                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
+                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/pool1.png'}/>
                   </div>
                   <div className={styles.preferitem_box_votes}>
                     <div>水上世界健身会所</div>

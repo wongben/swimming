@@ -21,7 +21,7 @@ const PoolList = ({ dataSource, loading, onEndReached }) => {
       scrollRenderAheadDistance={600}
       onEndReached={onEndReached}
       onEndReachedThreshold={100}
-      initialListSize={dataSource.length - 4}
+      initialListSize={dataSource.length}
       scrollEventThrottle={30}
     />
   );

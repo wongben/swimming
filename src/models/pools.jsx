@@ -34,7 +34,6 @@ export default {
     homePage({ dispatch, history }) {
       history.listen((location) => {
         if (location.pathname === '/pools' || location.pathname === '/home') {
-          console.info('homePage');
           dispatch({
             type: 'query',
             payload: {

@@ -6,10 +6,12 @@ import styles from './InfoItem.less';
 
 
 const InfoItem = ({ dispatch, handleClick, ...datas }) => {
-  const { data } = { ...datas };
+  const { data,uid } = { ...datas };
+
+  console.info('InfoItem',uid);
   return (
     <section>
-      <TabPane data={data} handleClick={handleClick} />
+      <TabPane data={data} uid = {uid} handleClick={handleClick} />
       <InfoList {...data} />
     </section>
   )

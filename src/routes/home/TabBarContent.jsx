@@ -26,7 +26,7 @@ const TabBarContent = ({ dispatch, pools, loading, global, infos } ) => {
       result = <Profile />
       break;
 
-    default : result = <div>default</div> ;
+    default : result = <div style={{paddingTop: '.8rem'}}>default</div> ;
   }
   return result;
 }

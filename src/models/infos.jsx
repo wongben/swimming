@@ -1,54 +1,13 @@
-import {parse} from 'qs';
+import { parse } from 'qs';
 import pathToRegexp from 'path-to-regexp';
-import {fetchInfo} from '../services/infoService';
-
-const data = {
-  'dataList': [{
-    'name': '选项卡',
-    'id': 1,
-    'title': "全国游泳池检查水质",
-    'time': '2017-01-01',
-    'contentTitle': "记者徐杰摄影报道",
-    'content': "为进一步加强水质监测...",
-  }, {
-    'name': '选项卡',
-    'id': 2,
-    'title': "全国游泳池检查水质1",
-    'time': '2017-01-01',
-    'contentTitle': "记者徐杰摄影报道",
-    'content': "为进一步加强水质监测....",
-  }, {
-    'name': '选项卡',
-    'id': 3,
-    'title': "全国游泳池检查水质2",
-    'time': '2017-01-01',
-    'contentTitle': "记者徐杰摄影报道",
-    'content': "为进一步加强水质监测...",
-  }, {
-    'name': '选项卡',
-    'id': 4,
-    'title': "全国游泳池检查水质3",
-    'time': '2017-01-01',
-    'contentTitle': "记者徐杰摄影报道",
-    'content': "为进一步加强水质监测...",
-  }],
-  pageNo: 1,
-  pageSize: 20,
-  pageCount: 20,
-  totalCount: 50
-};
+import { fetchInfo } from '../services/infoService';
 
 export default {
   namespace: 'infos',
   state: {
-    data: {},
-    currentItem: {
-      title: '',
-      time: '',
-      contentTitle: '',
-      content: '',
-      id: '',
+    data: {
     },
+    uid: 1,
     loading: false,
     hadMore: true,
     pageNo: 1,
@@ -58,8 +17,8 @@ export default {
     totalCount: 0
   },
   subscriptions: {
-    infoPage({dispatch, history}) {
-      return history.listen(({pathname}) => {
+    infoPage({ dispatch, history }) {
+      return history.listen(({ pathname }) => {
         const match = pathToRegexp('/info').exec(pathname);
         if (match) {
           dispatch({
@@ -72,15 +31,16 @@ export default {
 
   },
   effects: {
-    * fetchInfo({payload: id}, {call, put}) {
-      const showLoading = yield put({type: 'showLoading'});
+    * fetchInfo({ payload: id }, { call, put }) {
+      const showLoading = yield put({ type: 'showLoading' });
       console.info('fetchInfo');
-      //const { data } = yield call(fetchInfo, id);
+      const { data } = yield call(fetchInfo, id);
       if (data) {
         yield put({
           type: 'showInfo',
           payload: {
-            data
+            data,
+            uid: id
           },
         });
       }
@@ -88,23 +48,22 @@ export default {
   },
   reducers: {
     showLoading(state) {
-      return {...state, loading: true};
+      return { ...state, loading: true };
     },
     hideLoading(state) {
-      return {...state, loading: false, hadMore: false};
+      return { ...state, loading: false, hadMore: false };
     },
-    showMessage(state) {
-    },
+    showMessage(state) {},
     querySuccess(state, action) {
       const dataSource = state.dataSource.concat(action.payload.data);
       const pageNo = action.payload.pageNo;
-      return {...state, dataSource, pageNo, loading: false};
+      return { ...state, dataSource, pageNo, loading: false };
     },
     updateQueryKey(state, action) {
-      return {...state, ...action.payload};
+      return { ...state, ...action.payload };
     },
     showInfo(state, action) {
-      return {...state, ...action.payload.data}
+      return { ...state, ...action.payload.data , uid: action.payload.uid }
     }
   }
 }

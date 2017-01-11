@@ -6,19 +6,31 @@ import {connect} from 'dva';
 import { hashHistory } from 'dva/router';
 import style from './photoAlbum.less';
 
-const arr = [
-  {'src': 'http://oiu42aq9j.bkt.clouddn.com/pool1.png'},
-  {'src': 'http://oiu42aq9j.bkt.clouddn.com/pool2.png'},
-  {'src': 'http://oiu42aq9j.bkt.clouddn.com/pool3.png'},
-  {'src': 'http://oiu42aq9j.bkt.clouddn.com/pool1.png'},
-  {'src': 'http://oiu42aq9j.bkt.clouddn.com/pool2.png'},
-  {'src': 'http://oiu42aq9j.bkt.clouddn.com/pool3.png'},
-  {'src': 'http://oiu42aq9j.bkt.clouddn.com/pool1.png'},
-  {'src': 'http://oiu42aq9j.bkt.clouddn.com/pool2.png'},
-  {'src': 'http://oiu42aq9j.bkt.clouddn.com/pool3.png'},
+const arrTaoPu = [
+  {'src': 'http://img.release.1yd.me/FqJ-OlXAF3CJMrWBrvJd-wabkvFa'},
+  {'src': 'http://img.release.1yd.me/FnF9738e4om1m8rYWZaKvHWfMNLx'},
+  {'src': 'http://img.release.1yd.me/FlV30n21e7FXAm7WL_O4L1EVAIwT'},
+  {'src': 'http://img.release.1yd.me/FrGRChzaRJVewQo3RMTvw9pk0H7A'},
+  {'src': 'http://img.release.1yd.me/FnvwSP6wdclbBhexWzUQEpd-5tiE'},
+  {'src': 'http://img.release.1yd.me/Fn-aIs4kJPrqE_NiozcS83CZoSGW'},
+  {'src': 'http://img.release.1yd.me/Fhp48PdEQvkNXb7DA_J0yAEHTaVu'},
+  {'src': 'http://img.release.1yd.me/Ftbbtzr5wGZKvEjrp9CkSK7eFMQg'},
+];
+
+const arrCongMing = [
+  {'src': 'http://img.release.1yd.me/FiLSs0kBWo0PvZmH2wI0UNMHRk7r'},
+  {'src': 'http://img.release.1yd.me/Fv94b9c7Pjp2mxfjhF__v7Ks0mHJ'},
+  {'src': 'http://img.release.1yd.me/FnUIjOowtjmtLx9GbdSsNddNJKdD'},
+  {'src': 'http://img.release.1yd.me/FrH34ZiK8e0V3dyfGOtBiyEH1k36'},
+  {'src': 'http://img.release.1yd.me/FiKI1Bv16QZIO2SnwrhsO8yy-kt0'},
+  {'src': 'http://img.release.1yd.me/Ft8eU6_e6_ewXXO2-br_3jUe6POU'},
+  {'src': 'http://img.release.1yd.me/FloJCty7w99s_pnDB90u2de1fl8m'},
+  {'src': 'http://img.release.1yd.me/FrcmARMqgI7HVMjVGdNBxk-08RjG'},
 ];
 
 const photo = ({location, dispatch, pools}) => {
+  const id = pools.currentItem.id;
+  let arr = id === 'f2eb76bebd1b11e6bfe20242ac11001c' ? arrTaoPu : arrCongMing ;
   return (
     <div>
     <NavBar

@@ -18,11 +18,11 @@ const PoolList = ({ dataSource, loading, onEndReached }) => {
       )}
       renderRow={renderRow}
       renderFooter={renderFooter}
-      scrollRenderAheadDistance={600}
+      scrollRenderAheadDistance={500}
       onEndReached={onEndReached}
       onEndReachedThreshold={100}
-      initialListSize={dataSource.length - 4}
-      scrollEventThrottle={30}
+      initialListSize={5}
+      scrollEventThrottle={20}
     />
   );
 };

@@ -11,7 +11,7 @@ const Brief = Item.Brief;
 const Profile = React.createClass({
   render() {
     return (
-      <div style={{height: 'auto'}}>
+      <div style={{height: 'auto', paddingTop: '0.8rem'}}>
         <section className={styles.item}>
           <header>
             <img src="http://oiu42aq9j.bkt.clouddn.com/my_digital.png" alt="" />

@@ -11,7 +11,9 @@ const showToast = () => {
 
 const Pools = ({ location, dispatch, pools, loading }) => {
   const { dataSource, pageNo, pageSize, hadMore } = pools;
+
   const onEndReached = (event) => {
+    console.info('Pools',hadMore ,loading );
     if (!loading && hadMore) {
       dispatch({
         type: 'pools/query',
@@ -20,9 +22,7 @@ const Pools = ({ location, dispatch, pools, loading }) => {
     }
   };
   const poolListProps = { dataSource, onEndReached, loading };
-    console.log('dataSource',dataSource)
-     console.log('onEndReached',onEndReached)
-      console.log('loading',loading)
+
   return (
     <LayoutWithTabBar location={location} title="主页" hiddenBackButton="true">
       <SearchBar placeholder="搜索"/>

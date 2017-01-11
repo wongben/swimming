@@ -16,7 +16,7 @@ const Info = ({ location, dispatch, infos }) => {
   const values = { data:infos.data , uid: infos.uid};
   console.info(infos.uid);
   return (
-    <div>
+    <div style={{paddingTop: '0.8rem'}}>
       <InfoItem {...values} handleClick={handleClick} />
     </div>
   )

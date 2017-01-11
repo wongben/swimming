@@ -6,7 +6,7 @@ import {connect} from 'dva';
 import styles from './HomeTabBar.less';
 import TabBarContent from './TabBarContent';
 
-const HomeTabBar = ({ dispatch, global, pools, infos, loading, title = '', hiddenTabBar = false}) => {
+const HomeTabBar = ({ dispatch, global, pools, infos, loading, title = '首页', hiddenTabBar = false}) => {
   return (
     <div className={styles.normal}>
       <NavBar
@@ -20,9 +20,7 @@ const HomeTabBar = ({ dispatch, global, pools, infos, loading, title = '', hidde
       >
         {global.navTitle}
       </NavBar>
-      <div style={{paddingTop: '.8rem'}}>
-        {<TabBarContent dispatch={dispatch} pools={pools} loading={loading} global={global} infos={infos}/>}
-      </div>
+      {<TabBarContent dispatch={dispatch} pools={pools} loading={loading} global={global} infos={infos}/>}
       <TabBar
         unselectedTintColor="#949494"
         tintColor="#33A3F4"

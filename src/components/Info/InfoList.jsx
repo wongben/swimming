@@ -16,7 +16,7 @@ const InfoList = ({ ...items }) => {
           <Link to='news' style={{color: '#333'}}>
           <div className={style.item} key={ele.id}>
             <figure>
-              <img src="http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr" alt=""/>
+              <img src={ele.imageUrl} alt=""/>
             </figure>
             <section className={style.content}>
               <header>

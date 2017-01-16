@@ -9,9 +9,9 @@ import {
 } from 'antd-mobile';
 import React, {PropTypes} from 'react';
 import {connect} from 'dva';
-import PoolList from '../components/Pools/PoolList';
+import PoolList from '../components/pools/PoolList';
 import styles from './Preferential.less';
-import LayoutWithTabBar from '../components/Layout/LayoutWithTabBar';
+import LayoutWithTabBar from '../components/layout/LayoutWithTabBar';
 
 const data = [
   {
@@ -105,7 +105,7 @@ const Preferential = ({location, dispatch, pools, loading}) => {
                   <div >票数充足</div>
                 </div>
               </div>
-            
+
             </div>
           </div>
         </TabPane>

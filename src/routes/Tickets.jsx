@@ -6,7 +6,7 @@ import TicketList from '../components/Ticket/TicketList';
 import MemberCardList from '../components/Ticket/MemberCardList';
 import CommentList from '../components/Ticket/CommentList';
 import styles from './Tickets.less';
-import LayoutWithTabBar from '../components/Layout/LayoutWithTabBar';
+import LayoutWithTabBar from '../components/layout/LayoutWithTabBar';
 
 const Tickets = ({location}) => (
   <div>

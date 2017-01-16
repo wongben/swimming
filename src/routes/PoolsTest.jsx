@@ -1,7 +1,7 @@
 /* eslint import/extensions: 0 */
 import { SearchBar ,Toast } from 'antd-mobile';
 import React, { PropTypes } from 'react';
-import PoolList from '../components/Pools/PoolList';
+import PoolList from '../components/pools/PoolList';
 import styles from './Pools.less';
 const showToast = () => {
   Toast.info('暂时没有哦:)');

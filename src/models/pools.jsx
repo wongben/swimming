@@ -21,6 +21,7 @@ export default {
       serviceTypes: [],
       id: '',
       longitude: ''
+
     },
     hadMore: true,
     pageNo: 0,

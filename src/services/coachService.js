@@ -1,9 +1,6 @@
-/**
- * Created by ryan on 2017/1/10.
- */
-import qs from 'qs';
+
 import request from '../utils/request';
-const baseURL = HOST;
+const baseURL = '';
 
 export async function fetchCoach(id) {
   return request(`${baseURL}/swim/pools/public/${id}`);

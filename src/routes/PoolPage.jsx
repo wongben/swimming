@@ -4,7 +4,7 @@ import { connect } from 'dva';
 import { Link } from 'dva/router';
 import React, { PropTypes } from 'react';
 import { hashHistory } from 'dva/router';
-import StarIcons from '../components/Common/StarIcons';
+import StarIcons from '../components/common/StarIcons';
 import LayoutWithTabBar from './home/HomeTabBar';
 import styles from './PoolPage.less';
 

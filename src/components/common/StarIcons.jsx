@@ -1,4 +1,3 @@
-/* eslint import/extensions: 0*/
 import { Icon } from 'antd-mobile';
 import React, { PropTypes } from 'react';
 import styles from './StarIcons.less';

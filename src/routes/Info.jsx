@@ -1,8 +1,7 @@
 /* eslint import/extensions: 0 */
 import React, { PropTypes } from 'react';
 import { connect } from 'dva';
-import InfoItem from '../components/info/InfoItem';
-
+import InfoItem from '../components/Info/InfoItem';
 
 const Info = ({ location, dispatch, infos }) => {
   const handleClick = (state) => {

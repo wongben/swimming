@@ -21,8 +21,8 @@ export default ({ history }) => {
   return (
     <Router history={history}>
       <Redirect from="/" to="/pools" />
-      <Route path="/home" component={HomeTabBar} />
-      <Route path="/pools" component={HomeTabBar} />
+      <Route path="/home" component={Pools} />
+      <Route path="/pools" component={Pools} />
       <Route path="/pools/:poolId" component={PoolPage} />
       <Route path="/discount" component={Preferential} />
       <Route path="/mine" component={Playground} />
@@ -31,7 +31,6 @@ export default ({ history }) => {
       <Route path="/photoAlbum" component={PhotoAlbum} />
       <Route path="/profile" component={Profile} />
       <Route path="/lifesaver" component={LifeSaver} />
-      <Route path="/profile" component={Profile} />
       <Route path="/coach" component={CoachPage} />
       <Route path="/ticket" component={Tickets} />
       <Route path="/news" component={NewsDetails} />

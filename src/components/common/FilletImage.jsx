@@ -1,5 +1,3 @@
-/* eslint import/extensions: 0*/
-import { Icon } from 'antd-mobile';
 import React, { PropTypes } from 'react';
 import styles from './FilletImage.less';
 
@@ -11,7 +9,7 @@ const FilletImage = ({ imageUrl, width, height }) => {
 		return (<img className={styles.fillet_image} src={imageUrl == null?defaultImage:imageUrl} width="100px" height="100px" ></img>);
 	}
 	else{
-		return (<img className={styles.fillet_image} src={imageUrl == null?defaultImage:imageUrl} width={width} height={height} ></img>); 
+		return (<img className={styles.fillet_image} src={imageUrl == null?defaultImage:imageUrl} width={width} height={height} ></img>);
 	}
 };
 export default FilletImage;

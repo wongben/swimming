@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'dva/router';
-import StarIcons from '../Common/StarIcons';
+import StarIcons from '../common/StarIcons';
 import styles from './PoolItem.less';
 
 const PoolItem = ({ rowData, sectionId, rowId }) => (

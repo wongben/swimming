@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, List, InputItem, Switch, Stepper, Slider, Button } from 'antd-mobile';
-import FilletImage from '../../components/Common/FilletImage';
+import FilletImage from '../../components/common/FilletImage';
 import styles from './PersonalInfo.less';
 
 const Item = List.Item;

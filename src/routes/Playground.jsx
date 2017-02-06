@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'dva';
 import LayoutWithTabBar from './home/HomeTabBar';
+import styles from './Playground.less';
 
-const Playground = ({ location }) => (<LayoutWithTabBar location={location} />);
+const Playground = ({ location }) => (
+<div className={styles.normal}> </div>
+);
 
 function mapStateToProps({ pools }) {
   return { pools };

@@ -8,7 +8,7 @@ const Feedback = () => {
     <div className={styles.normal}>
       <NavBar
         leftContent=""
-        style={{ backgroundColor: '#108ee9' }}
+        style={{backgroundColor: '#108ee9', position: 'fixed', width: '100%', top: '0px', zIndex: 10 }}
         mode="dark"
         onLeftClick={() => { hashHistory.goBack(); }}
         rightContent={<Button className={styles.nav_right_item}  activeStyle={false} onClick={()=>{Toast.info("提交成功")}} >提交</Button>}
@@ -16,7 +16,7 @@ const Feedback = () => {
         意见反馈
       </NavBar>
 
-      <div className={styles.input_frame}>
+      <div className={styles.input_frame} style={{paddingTop: '.8rem'}}>
         <TextareaItem
           placeholder="留下你宝贵的小意见吧"
           rows={7}

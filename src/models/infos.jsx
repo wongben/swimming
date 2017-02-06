@@ -2,19 +2,12 @@ import { parse } from 'qs';
 import pathToRegexp from 'path-to-regexp';
 import { fetchInfo } from '../services/infoService';
 
-
 export default {
   namespace: 'infos',
   state: {
     data: {
     },
-    currentItem: {
-      title: '',
-      time: '',
-      contentTitle: '',
-      content: '',
-      id: '',
-    },
+    uid: 1,
     loading: false,
     hadMore: true,
     pageNo: 1,
@@ -46,7 +39,8 @@ export default {
         yield put({
           type: 'showInfo',
           payload: {
-            data
+            data,
+            uid: id
           },
         });
       }
@@ -69,7 +63,7 @@ export default {
       return { ...state, ...action.payload };
     },
     showInfo(state, action) {
-      return { ...state, ...action.payload.data }
+      return { ...state, ...action.payload.data , uid: action.payload.uid }
     }
   }
 }

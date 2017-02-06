@@ -21,6 +21,7 @@ export default {
       serviceTypes: [],
       id: '',
       longitude: ''
+
     },
     hadMore: true,
     pageNo: 0,
@@ -34,11 +35,9 @@ export default {
     homePage({ dispatch, history }) {
       history.listen((location) => {
         if (location.pathname === '/pools' || location.pathname === '/home') {
-          console.info('homePage');
           dispatch({
             type: 'query',
             payload: {
-              pageNo: 1,
               pageSize: 20
             }
           });
@@ -63,11 +62,11 @@ export default {
   effects: {
     * query({ payload }, { call, put }) {
       const { data } = yield call(fetchPoolList, parse(payload));
+      yield put({
+        type: 'updateQueryKey',
+        payload: { pageNo: 1, ...payload }
+      });
       if (data.data.dataList && data.data.dataList.length > 0) {
-        yield put({
-          type: 'updateQueryKey',
-          payload: { pageNo: 1, ...payload }
-        });
         yield put({
           type: 'querySuccess',
           payload: {
@@ -92,10 +91,19 @@ export default {
   },
   reducers: {
     querySuccess(state, action) {
-      const dataSource = state.dataSource.concat(action.payload.data);
-      const hadMore = ! (dataSource.length == action.payload.totalCount);
-      const pageNo = action.payload.pageNo;
-      return { ...state, dataSource, pageNo, hadMore };
+      if (action.payload.data.length > 0 && state.hadMore){
+        //console.info('action.payload.data.length', action.payload.data.length);
+        const dataSource = state.dataSource.concat(action.payload.data);
+        //console.info(dataSource.length, action.payload.totalCount);
+        const hadMore = ! (dataSource.length >= action.payload.totalCount);
+        const pageNo = action.payload.pageNo;
+        //console.info('hadMore', hadMore);
+        return { ...state, dataSource, pageNo, hadMore };
+      }
+      else{
+        const hadMore = false;
+        return { ...state, hadMore };
+      }
     },
     updateQueryKey(state, action) {
       return { ...state, ...action.payload };

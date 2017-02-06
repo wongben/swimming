@@ -19,13 +19,15 @@ const LayoutWithTabBar = ({ location, children, title = '', hiddenBackButton = f
     <NavBar
       iconName={hiddenBackButton ? 'false' : 'left'}
       leftContent={hiddenBackButton ? '' : '返回'}
-      style={{ backgroundColor: '#108ee9' }}
+      style={{ backgroundColor: '#108ee9', position: 'fixed', width: '100%', top: '0px', zIndex: 9 }}
       mode="dark"
       onLeftClick={() => { hashHistory.goBack(); }}
     >
       {title}
     </NavBar>
-    {children}
+    <div style={{paddingTop: '.8rem'}}>
+      {children}
+    </div>
     <TabBar
       unselectedTintColor="#949494"
       tintColor="#33A3F4"

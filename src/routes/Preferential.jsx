@@ -1,9 +1,17 @@
-import {TabBar, NavBar, Tabs, WhiteSpace, Toast} from 'antd-mobile';
+import {
+  TabBar,
+  NavBar,
+  Tabs,
+  WhiteSpace,
+  Toast,
+  RefreshControl,
+  ListView
+} from 'antd-mobile';
 import React, {PropTypes} from 'react';
 import {connect} from 'dva';
-import PoolList from '../components/Pools/PoolList';
+import PoolList from '../components/pools/PoolList';
 import styles from './Preferential.less';
-import LayoutWithTabBar from '../components/Layout/LayoutWithTabBar';
+import LayoutWithTabBar from '../components/layout/LayoutWithTabBar';
 
 const data = [
   {
@@ -31,193 +39,134 @@ function callback(key) {
 const Preferential = ({location, dispatch, pools, loading}) => {
 
   const {dataSource, pageNo, pageSize, hadMore, total} = pools;
-  const onEndReached = (event) => {
-    if (!loading && hadMore) {
-      dispatch({
-        type: 'pools/query',
-        payload: {
-          pageNo: pageNo + 1,
-          pageSize
-        }
-      });
-    }
-  };
-  const poolListProps = {
-    dataSource,
-    onEndReached,
-    loading
-  };
+
   return (
-      <div className={styles.prefer_container}>
-        <Tabs defaultActiveKey="1" animated={false} onChange={callback}>
-          <TabPane tab="婴儿池" key="1">
-            <div className={styles.preferitem}>
-              <div className={styles.preferitem_cell}>
-                <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}>
-                    <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>宾利特健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
+    <div className={styles.prefer_container}  style={{paddingTop:'.9rem',paddingBottom:'1.1rem'}}>
+      <Tabs defaultActiveKey="1" onChange={callback}>
+        <TabPane tab="婴儿池" key="1">
+          <div className={styles.preferitem}>
+            <div className={styles.preferitem_cell}>
+              <div className={styles.preferitem_box}>
+                <div className={styles.preferitem_photo}>
+                  <img src={'http://img.release.1yd.me/Fj5TGHDtBa9-JyTNx3-m9nsJCD3X'}/>
                 </div>
-                <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>宾利特健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
+                <div className={styles.preferitem_box_votes}>
+                  <div>兴荣温德姆酒店游泳馆</div>
+                  <div >票数充足</div>
                 </div>
-                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>宾利特健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
+              </div>
+              <div className={styles.preferitem_box}>
+                <div className={styles.preferitem_photo}><img src={'http://img.release.1yd.me/FuNwwei42SlXZvLoraO86LdxeiG5'}/>
                 </div>
-                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>宾利特健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
+                <div className={styles.preferitem_box_votes}>
+                  <div>仁恒怡庭游泳馆</div>
+                  <div >票数充足</div>
                 </div>
-                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>宾利特健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
+              </div>
+            </div>
+          </div>
+        </TabPane>
+        <TabPane tab="室内游泳馆" key="2">
+          <div className={styles.preferitem}>
+            <div className={styles.preferitem_cell}>
+              <div className={styles.preferitem_box}>
+                <div className={styles.preferitem_photo}>
+                  <img src={'http://img.release.1yd.me/FrMCwHCN2ndqBs1MUW89CPC3wg0m'}/>
                 </div>
-                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>宾利特健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
+                <div className={styles.preferitem_box_votes}>
+                  <div >沈坚强俱乐部</div>
+                  <div >票数充足</div>
                 </div>
+              </div>
+              <div className={styles.preferitem_box}>
+                <div className={styles.preferitem_photo}>
+                <img src={'http://img.release.1yd.me/FmDu14Qg5GmEY8wOjU-mscN109TH'}/>
+                </div>
+                <div className={styles.preferitem_box_votes}>
+                  <div>WILLS健身会所</div>
+                  <div >票数充足</div>
+                </div>
+              </div>
+              <div className={styles.preferitem_box}>
+                <div className={styles.preferitem_photo}>
+                <img src={'http://img.release.1yd.me/Fk1M91iHA2VVq3nvYX3lUlvx1BiU'}/>
+                </div>
+                <div className={styles.preferitem_box_votes}>
+                  <div>上海达康游泳馆</div>
+                  <div >票数充足</div>
+                </div>
+              </div>
+               <div className={styles.preferitem_box}>
+                <div className={styles.preferitem_photo}>
+                <img src={'http://img.release.1yd.me/FldlqeYQz7fKSdz6ma3VZ1LF7oes'}/>
+                </div>
+                <div className={styles.preferitem_box_votes}>
+                  <div>四方俱乐部</div>
+                  <div >票数充足</div>
+                </div>
+              </div>
 
+            </div>
+          </div>
+        </TabPane>
+        <TabPane tab="室外游泳池" key="3">
+          <div className={styles.preferitem}>
+            <div className={styles.preferitem_cell}>
+              <div className={styles.preferitem_box}>
+                <div className={styles.preferitem_photo}>
+                  <img src={'http://oiu42aq9j.bkt.clouddn.com/pool3.png'}/>
+                </div>
+                <div className={styles.preferitem_box_votes}>
+                  <div>嘉年别墅游泳池</div>
+                  <div >票数充足</div>
+                </div>
+              </div>
+              <div className={styles.preferitem_box}>
+                <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/pool1.png'}/>
+                </div>
+                <div className={styles.preferitem_box_votes}>
+                  <div>梅陇城世纪苑游泳池</div>
+                  <div >票数充足</div>
+                </div>
+              </div>
+             <div className={styles.preferitem_box}>
+                <div className={styles.preferitem_photo}>
+                <img src={'http://img.release.1yd.me/FomVE-ZIAOp47FGK20kdLAInNrk8'}/>
+                </div>
+                <div className={styles.preferitem_box_votes}>
+                  <div>MOB迈博健身健身会所</div>
+                  <div >票数充足</div>
+                </div>
+              </div>
 
-              </div>
             </div>
-          </TabPane>
-          <TabPane tab="室内游泳馆" key="2">
-            <div className={styles.preferitem}>
-              <div className={styles.preferitem_cell}>
-                <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}>
-                    <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>室内游泳健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
+          </div>
+        </TabPane>
+        <TabPane tab="水上世界" key="4">
+          <div className={styles.preferitem}>
+            <div className={styles.preferitem_cell}>
+              <div className={styles.preferitem_box}>
+                <div className={styles.preferitem_photo}>
+                  <img src={'http://img.release.1yd.me/FgarIrVBZKmhGMmDKvpPBK57syFn'}/>
                 </div>
-                <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>室内游泳健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
+                <div className={styles.preferitem_box_votes}>
+                  <div>上海浦东游泳馆</div>
+                  <div >票数充足</div>
                 </div>
-                 <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>室内游泳健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
+              </div>
+              <div className={styles.preferitem_box}>
+                <div className={styles.preferitem_photo}><img src={'http://img.release.1yd.me/FrEu-cyNmiK4cNaY3Ec1716gXKY9'}/>
+                </div>
+                <div className={styles.preferitem_box_votes}>
+                  <div>江东游泳馆</div>
+                  <div >票数充足</div>
                 </div>
               </div>
             </div>
-          </TabPane>
-          <TabPane tab="室外游泳池" key="3">
-            <div className={styles.preferitem}>
-              <div className={styles.preferitem_cell}>
-                <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}>
-                    <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>室外游泳健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
-                </div>
-                <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>室外游泳健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
-                </div>
-                <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>室外游泳健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
-                </div>
-                <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>室外游泳健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </TabPane>
-          <TabPane tab="水上世界" key="4">
-            <div className={styles.preferitem}>
-              <div className={styles.preferitem_cell}>
-                <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}>
-                    <img src={'http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>水上世界健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
-                </div>
-                <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>水上世界健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
-                </div>
-                <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>水上世界健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
-                </div>
-                <div className={styles.preferitem_box}>
-                  <div className={styles.preferitem_photo}><img src={'http://oiu42aq9j.bkt.clouddn.com/sea.png'}/>
-                  </div>
-                  <div className={styles.preferitem_box_votes}>
-                    <div>水上世界健身会所(金仕堡)</div>
-                    <div >票数充足</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </TabPane>
-        </Tabs>
-      </div>
+          </div>
+        </TabPane>
+      </Tabs>
+    </div>
 
   );
 };

@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import PoolList from '../../components/Pools/PoolList';
+import PoolList from '../../components/pools/PoolList';
 import PoolsTest from '../PoolsTest';
 import Preferential from '../Preferential';
 import Info from '../Info';
@@ -26,7 +26,7 @@ const TabBarContent = ({ dispatch, pools, loading, global, infos } ) => {
       result = <Profile />
       break;
 
-    default : result = <div>default</div> ;
+    default : result = <div style={{paddingTop: '.8rem'}}>default</div> ;
   }
   return result;
 }

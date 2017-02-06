@@ -23,5 +23,10 @@
     "import/no-unresolved": [0],
     "no-plusplus": [0],
     "max-len": [0]
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
   }
+}
 }

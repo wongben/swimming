@@ -3,10 +3,12 @@ import style from './InfoList.less';
 import { Link } from 'dva/router';
 
 const InfoList = ({ ...items }) => {
+  console.log({...items});
   let { dataList } = { ...items } || [];
   if (!dataList) {
     dataList = [];
   }
+  console.log(dataList);
   return (
     <div>
       {
@@ -14,16 +16,16 @@ const InfoList = ({ ...items }) => {
           <Link to='news' style={{color: '#333'}}>
           <div className={style.item} key={ele.id}>
             <figure>
-              <img src="http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr" alt=""/>
+              <img src={ele.imageUrl} alt=""/>
             </figure>
             <section className={style.content}>
               <header>
-                <p className={style.title}>{ele.title}</p>
+                <h4 className={style.title}>{ele.title}</h4>
                 <p className={style.time}>{ele.time}</p>
               </header>
               <article>
                 <span className={style.infoTitle}>{ele.contentTitle}</span>
-                <span className={style.infoContent}>{ele.content}</span>
+                <span wrap="false" className={style.infoContent}>{ele.content.length > 25 ? `${ele.content.slice(0,25)}...` : ele.content}</span>
               </article>
             </section>
           </div>

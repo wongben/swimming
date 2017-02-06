@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 import {List} from 'antd-mobile';
 import styles from './CommentList.less';
-import StarIcons from '../Common/StarIcons';
+import StarIcons from '../common/StarIcons';
 
 const CommentList = () => {
   const Item = List.Item;

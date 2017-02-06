@@ -1,7 +1,7 @@
 import qs from 'qs';
 import request from '../utils/request';
 /* eslint no-undef: 0 */
-const baseURL = HOST;
+const baseURL = '';
 
 export async function query(params) {
   return request(`${baseURL}/swim/pools/public?${qs.stringify(params)}`);

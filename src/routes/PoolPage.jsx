@@ -4,7 +4,7 @@ import { connect } from 'dva';
 import { Link } from 'dva/router';
 import React, { PropTypes } from 'react';
 import { hashHistory } from 'dva/router';
-import StarIcons from '../components/Common/StarIcons';
+import StarIcons from '../components/common/StarIcons';
 import LayoutWithTabBar from './home/HomeTabBar';
 import styles from './PoolPage.less';
 
@@ -15,7 +15,7 @@ const PoolPage = ({ location, pools, loading }) => {
   return (
     <div className={styles.normal}>
       <NavBar
-        style={{backgroundColor: '#108ee9'}}
+        style={{backgroundColor: '#108ee9', position: 'fixed', width: '100%', top: '0px', zIndex: 9 }}
         mode="dark"
         onLeftClick={ () => {
           hashHistory.goBack();
@@ -23,7 +23,7 @@ const PoolPage = ({ location, pools, loading }) => {
       >
         泳池详情
       </NavBar>
-      <List className={styles.list}>
+      <List className={styles.list}  style={{paddingTop: '.8rem'}}>
         <img className={styles.photo} src={currentItem.spAvatar} alt="游泳池照片" />
         <div className={styles.address_line}>
           <div className={styles.address_item}>

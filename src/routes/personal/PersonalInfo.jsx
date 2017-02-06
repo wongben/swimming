@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, List, InputItem, Switch, Stepper, Slider, Button } from 'antd-mobile';
-import FilletImage from '../../components/Common/FilletImage';
+import FilletImage from '../../components/common/FilletImage';
 import styles from './PersonalInfo.less';
 
 const Item = List.Item;
@@ -9,9 +9,10 @@ const Brief = Item.Brief;
 const PersonalInfo = () => {
   {/* get请求数据 */}
   const personalObj = {
-  	name:"游泳达人",
-  	phone:"15021123142",
-  	imageUrl: "http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr"
+  	name:"游啊游",
+  	phone:"18765776566",
+  	//imageUrl: "http://img.release.1yd.me/Fnq3JmmOan-yAHtJHk-n9-o3Qqbr"
+  	imageUrl: "http://oiu42aq9j.bkt.clouddn.com/my_digital.png"
   };
 
   return (

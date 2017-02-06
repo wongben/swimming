@@ -1,22 +1,22 @@
 /* eslint import/extensions: 0 */
-import { TabBar, SearchBar } from 'antd-mobile';
 import React, { PropTypes } from 'react';
 import { connect } from 'dva';
-import InfoItem from '../components/info/InfoItem';
-import LayoutWithTabBar from './home/HomeTabBar';
-import styles from './Pools.less';
+import InfoItem from '../components/Info/InfoItem';
 
 const Info = ({ location, dispatch, infos }) => {
   const handleClick = (state) => {
-    const { id } = state;
+    const { uid } = state;
     dispatch({
       type: 'infos/fetchInfo',
-      payload: id
+      payload: uid
     });
   }
+
+  const values = { data:infos.data , uid: infos.uid};
+  console.info(infos.uid);
   return (
-    <div>
-      <InfoItem {...infos} handleClick={handleClick} />
+    <div style={{paddingTop: '0.8rem'}}>
+      <InfoItem {...values} handleClick={handleClick} />
     </div>
   )
 };

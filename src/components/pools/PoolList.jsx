@@ -10,7 +10,7 @@ const PoolList = ({ dataSource, loading, onEndReached }) => {
   const renderFooter = () => (<div style={{ padding: 5, textAlign: 'center' }}>
     {loading ? '加载中...' : '我是有底线的'}</div>);
   return (
-    <ListView
+    <ListView styles={{}}
       dataSource={ds.cloneWithRows(dataSource)}
       renderSeparator={(sectionID, rowID) => (
         // <div key={`${sectionID}-${rowID}`} style={{ height: '0.25rem', backgroundColor: '#f5f5f9' }} />
@@ -18,11 +18,11 @@ const PoolList = ({ dataSource, loading, onEndReached }) => {
       )}
       renderRow={renderRow}
       renderFooter={renderFooter}
-      scrollRenderAheadDistance={600}
+      scrollRenderAheadDistance={500}
       onEndReached={onEndReached}
       onEndReachedThreshold={100}
-      initialListSize={dataSource.length - 4}
-      scrollEventThrottle={30}
+      initialListSize={5}
+      scrollEventThrottle={20}
     />
   );
 };
